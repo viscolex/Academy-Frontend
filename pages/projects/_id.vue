@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <div class="uk-container uk-container-expand">
+      <h2
+        class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
+      >PROJECT INTRODUCTIONS</h2>
+      <ViewAllProjects :projectintroductions="projectintroductions"></ViewAllProjects>
+    </div>
+  </div>
+</template>
+
+<script>
+import projectintroductionsQuery from "~/apollo/queries/project/projectintroductions";
+import ViewAllProjects from "~/components/ViewAllProjects";
+var moment = require("moment");
+
+export default {
+  data() {
+    return {
+      projectintroductions: [],
+      moment: moment
+    };
+  },
+  head() {
+    return {
+      title: "Project Introductions" + " | " + "Txbit Academy"
+    };
+  },
+  components: {
+    ViewAllProjects
+  },
+  apollo: {
+    projectintroductions: {
+      prefeth: true,
+      query: projectintroductionsQuery
+    }
+  }
+};
+</script>

@@ -1,0 +1,10 @@
+query projectintroductions {
+  projectintroductions {
+    id
+    title
+    published_at
+    image_src
+    short_description
+    ticker
+  }
+}

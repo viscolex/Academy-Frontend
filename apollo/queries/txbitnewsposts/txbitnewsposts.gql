@@ -1,0 +1,9 @@
+query Txbitnewsposts {
+  txbitnewsposts {
+    id
+    title
+    content
+    url
+    published_at
+  }
+}

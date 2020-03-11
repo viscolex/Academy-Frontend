@@ -1,0 +1,12 @@
+query Articles($id: ID!) {
+  article(id: $id) {
+    id
+    title
+    content
+    description
+    keywords
+    image_src
+    image_alt
+    published_at
+  }
+}
