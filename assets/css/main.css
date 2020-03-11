@@ -1592,11 +1592,13 @@ a:active {
 }
 
 .container-title {
-  color: #777988;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 13px;
-  padding-top: 10px;
+  font-family: 'Raleway', sans-serif;
+  color: #6e7182;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: -11px;
+  margin-left: -3px;
+  padding-top: 5px;
 }
 
 .project-container-title {
@@ -1623,12 +1625,12 @@ a:active {
 }
 
 .view-all-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   font-size: 0.9rem;
   font-weight: 500;
   color: rgb(231, 231, 231);
-  background-color: #131722;
   padding: 7px 10px;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 .uk-margin-bottom {
@@ -2126,7 +2128,7 @@ a:active {
   .view-all-button {
     font-size: 0.8rem;
     padding: 7px 10px;
-    margin-top: 4px;
+    margin-top: 0px !important;
   }
 
   .article-actions {
