@@ -9,7 +9,7 @@
                 <h2
                   class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
                 >
-                  LATEST ARTICLES
+                  LATEST ARTICLESs
                   <a
                     href="/viewall"
                     class="uk-float-right uk-card view-all-button uk-box-shadow-small"
@@ -19,6 +19,7 @@
                     <i class="fas fa-arrow-alt-circle-right"></i>
                   </a>
                 </h2>
+                <hr class="main-hr" />
               </div>
             </div>
 
@@ -38,14 +39,14 @@
                 <i class="fas fa-arrow-alt-circle-right"></i>
               </a>
             </h2>
-
+            <hr class="main-hr" />
             <LatestProjects :projectintroductions="projectintroductions"></LatestProjects>
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
             >TXBIT NEWS</h2>
-
+            <hr class="main-hr" />
             <News />
           </div>
         </div>

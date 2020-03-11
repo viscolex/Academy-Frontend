@@ -1593,12 +1593,18 @@ a:active {
 
 .container-title {
   font-family: 'Raleway', sans-serif;
-  color: #6e7182;
+  color: #131722;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: -11px;
   margin-left: -3px;
-  padding-top: 5px;
+  padding-top: 0px;
+}
+
+.main-hr {
+  margin: 0 0 5px 0;
+  border-width: 5px;
+  border-color: #131722;
 }
 
 .project-container-title {
@@ -1630,7 +1636,7 @@ a:active {
   font-weight: 500;
   color: rgb(231, 231, 231);
   padding: 7px 10px;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .uk-margin-bottom {
