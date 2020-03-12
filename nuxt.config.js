@@ -47,7 +47,6 @@ export default {
   */
 
   modules: [
-    '@nuxtjs/google-gtag',
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@neneos/nuxt-animate.css',
@@ -60,18 +59,6 @@ export default {
     debug: {
       enabled: false
     }
-  },
-
-  'google-gtag': {
-    id: 'UA-130503642-2',
-    config: {
-      anonymize_ip: true, // anonymize IP 
-      send_page_view: false, // might be necessary to avoid duplicated page track on page reload
-      linker: {
-        domains: ['txbit.academy']
-      }
-    },
-    disableAutoPageTrack: false, // disable if you don't want to track each page route with router.afterEach(...).
   },
 
   axios: {
