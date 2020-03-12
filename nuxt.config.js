@@ -41,13 +41,17 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/gtm',
   ],
+  gtm: {
+    id: 'GTM-W48RZQ7',
+    pageTracking: true
+  },
   /*
   ** Nuxt.js modules
   */
 
   modules: [
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-W48RZQ7' }],
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@neneos/nuxt-animate.css',
