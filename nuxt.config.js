@@ -34,20 +34,15 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/ga.js', mode: 'client' },
     { src: '~/plugins/uikit.js', ssr: false },
     { src: '~/plugins/fontawesome.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: ["@nuxtjs/google-analytics"],
-  
-  googleAnalytics: {
-    id: "UA-130503642-2",
-    debug: {
-      enabled: false,
-    }
-  },
+  buildModules: [
+  ],
   /*
   ** Nuxt.js modules
   */
