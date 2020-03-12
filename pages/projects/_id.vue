@@ -4,6 +4,7 @@
       <h2
         class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
       >PROJECT INTRODUCTIONS</h2>
+      <hr class="main-hr" />
       <ViewAllProjects :projectintroductions="projectintroductions"></ViewAllProjects>
     </div>
   </div>

@@ -1550,7 +1550,7 @@ a:active {
 .category-tabs {
   font-size: 1rem;
   font-weight: 500;
-  padding-top: 7px;
+  padding-top: 5px;
   padding-bottom: 2px;
 }
 
@@ -1598,7 +1598,7 @@ a:active {
   font-weight: 800;
   margin-bottom: -12px;
   margin-left: -2px;
-  padding-top: 0px;
+  padding-top: 2px;
 }
 
 .main-hr {
