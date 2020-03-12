@@ -1595,9 +1595,9 @@ a:active {
   font-family: 'Raleway', sans-serif;
   color: #131722;
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: -11px;
-  margin-left: -3px;
+  font-weight: 800;
+  margin-bottom: -12px;
+  margin-left: -2px;
   padding-top: 0px;
 }
 
@@ -1633,10 +1633,10 @@ a:active {
 .view-all-button {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
   color: rgb(231, 231, 231);
-  padding: 7px 10px;
-  margin-top: 8px;
+  padding: 7px 0px 7px 0px;
+  margin-top: 7px;
 }
 
 .uk-margin-bottom {
