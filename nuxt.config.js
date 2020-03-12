@@ -45,7 +45,8 @@ export default {
   ],
   gtm: {
     id: 'GTM-W48RZQ7',
-    pageTracking: true
+    pageTracking: true,
+    dev: false
   },
   /*
   ** Nuxt.js modules
