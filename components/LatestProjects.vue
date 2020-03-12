@@ -27,11 +27,11 @@
             </div>
             <div class="uk-width-1-4 pl-0 p-2 pb-1">
               <div
-                v-if="projectintroduction.image_src"
+                v-if="projectintroduction.image_new"
                 class="uk-card-media-top"
               >
                 <img
-                  :src="projectintroduction.image_src"
+                  :src="api_url + projectintroduction.image_new.url"
                   fluid-grow
                   alt="Fluid-grow image"
                   style="pointer-events: none;"
@@ -87,7 +87,8 @@ export default {
   data() {
     return {
       projectintroductions: [],
-      moment: moment
+      moment: moment,
+      api_url: process.env.strapiBaseUri
     };
   },
   apollo: {

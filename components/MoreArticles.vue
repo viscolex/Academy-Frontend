@@ -16,9 +16,9 @@
           class="uk-card uk-margin-bottom card-background  more-articles-hover"
           id="link-hover"
         >
-          <div v-if="article.image_src" class="uk-card-media-top">
+          <div v-if="article.image_new" class="uk-card-media-top">
             <img
-              :src="article.image_src"
+              :src="api_url + article.image_new.url"
               fluid-grow
               alt="article.image_alt"
               style="pointer-events: none;"
@@ -57,7 +57,8 @@ function shuffle(a) {
 export default {
   data() {
     return {
-      moment: moment
+      moment: moment,
+      api_url: process.env.strapiBaseUri
     };
   },
   props: {

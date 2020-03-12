@@ -1,5 +1,9 @@
 
 export default {
+  env: {  
+    strapiBaseUri: process.env.API_URL || "http://localhost:1337"
+  },
+  
   mode: 'universal',
   /*
   ** Headers of the page

@@ -1,8 +1,7 @@
 <template>
-  <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
+  <div class="uk-text-center mt-3">
+    <img src="~/assets/images/404.jpg" /><br /><br />
+    <nuxt-link to="/">Go To Home page</nuxt-link>
   </div>
 </template>
 

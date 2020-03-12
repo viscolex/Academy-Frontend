@@ -3,7 +3,7 @@
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small ">
         <img
-          :src="article.image_src"
+          :src="api_url + article.image_new.url"
           :alt="article.image_alt"
           width
           height
@@ -180,7 +180,8 @@ export default {
     return {
       articles: [],
       article: {},
-      moment: moment
+      moment: moment,
+      api_url: process.env.strapiBaseUri
     };
   },
   head() {

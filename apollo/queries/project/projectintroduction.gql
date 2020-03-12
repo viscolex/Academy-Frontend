@@ -6,6 +6,9 @@ query ProjectIntroductions($id: ID!) {
     description
     keywords
     image_src
+    image_new {
+      url
+    }
     published_at
     website
     explorer

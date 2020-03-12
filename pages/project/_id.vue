@@ -8,7 +8,7 @@
               <div class="uk-grid">
                 <div class="uk-text-center uk-width-1-2 uk-width-1-1@s">
                   <img
-                    :src="projectintroduction.image_src"
+                    :src="api_url + projectintroduction.image_new.url"
                     fluid-grow
                     alt="Fluid-grow image"
                     style="width: 40%; pointer-events: none;"
@@ -487,7 +487,8 @@ export default {
       projectintroduction: {},
       articles: [],
       moment: moment,
-      projectdata: null
+      projectdata: null,
+      api_url: process.env.strapiBaseUri
     };
   },
 

@@ -7,6 +7,9 @@ query Articles($id: ID!) {
     keywords
     image_src
     image_alt
+    image_new {
+      url
+    }
     published_at
   }
 }

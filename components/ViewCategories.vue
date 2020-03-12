@@ -11,9 +11,9 @@
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small "
           id="link-hover"
         >
-          <div v-if="article.image_src" class="uk-card-media-top">
+          <div v-if="article.image_new" class="uk-card-media-top">
             <img
-              :src="article.image_src"
+              :src="api_url + article.image_new.url"
               :alt="article.image_alt"
               width
               height
@@ -52,7 +52,8 @@ var moment = require("moment");
 export default {
   data() {
     return {
-      moment: moment
+      moment: moment,
+      api_url: process.env.strapiBaseUri
     };
   },
   props: {

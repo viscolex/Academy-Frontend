@@ -4,6 +4,9 @@ query projectintroductions {
     title
     published_at
     image_src
+    image_new {
+      url
+    }
     short_description
     ticker
   }

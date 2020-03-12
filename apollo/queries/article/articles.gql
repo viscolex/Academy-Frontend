@@ -6,6 +6,9 @@ query Articles {
     published_at
     image_src
     image_alt
+    image_new {
+      url
+    }
     category {
       name
     }
