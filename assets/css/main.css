@@ -214,8 +214,8 @@ label {
   color: white;
 }
 
-.day-mode .navbar-dark .navbar-nav .show>.nav-link,
-.day-mode .navbar-dark .navbar-nav .active>.nav-link,
+.day-mode .navbar-dark .navbar-nav .show > .nav-link,
+.day-mode .navbar-dark .navbar-nav .active > .nav-link,
 .day-mode .navbar-dark .navbar-nav .nav-link.show,
 .day-mode .navbar-dark .navbar-nav .nav-link.active {
   color: #387fe1;
@@ -779,15 +779,15 @@ h4 {
   transition: 0.4s;
 }
 
-input:checked+.switch-slider {
+input:checked + .switch-slider {
   background-color: #387fe1 !important;
 }
 
-input:focus+.switch-slider {
+input:focus + .switch-slider {
   box-shadow: 0 0 1px #387fe1 !important;
 }
 
-input:checked+.switch-slider:before {
+input:checked + .switch-slider:before {
   -webkit-transform: translateX(13px);
   -ms-transform: translateX(13px);
   transform: translateX(13px);
@@ -892,7 +892,6 @@ h5 {
 }
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
-
   0%,
   70%,
   100% {
@@ -907,7 +906,6 @@ h5 {
 }
 
 @keyframes sk-cubeGridScaleDelay {
-
   0%,
   70%,
   100% {
@@ -1586,25 +1584,25 @@ a:active {
   transition: background-color color 0.3s linear !important;
 }
 
-.uk-button-primary:hover>span,
-.view-all-button:hover>span {
+.uk-button-primary:hover > span,
+.view-all-button:hover > span {
   color: white !important;
 }
 
 .container-title {
-  font-family: 'Raleway', sans-serif;
-  color: #131722;
+  font-family: "Raleway", sans-serif;
+  color: #63697a;
   font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: -12px;
-  margin-left: -2px;
+  font-weight: 700;
+  margin-bottom: -11px;
   padding-top: 2px;
 }
 
 .main-hr {
   margin: 0 0 5px 0;
-  border-width: 5px;
+  border-width: 4px;
   border-color: #131722;
+  position: relative;
 }
 
 .project-container-title {
@@ -1614,7 +1612,7 @@ a:active {
   margin-bottom: 13px;
 }
 
-.uk-navbar-nav>li>a,
+.uk-navbar-nav > li > a,
 .uk-navbar-item,
 .uk-navbar-toggle {
   min-height: 46px;
@@ -1631,7 +1629,7 @@ a:active {
 }
 
 .view-all-button {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
   font-size: 0.9rem;
   font-weight: 400;
   color: rgb(231, 231, 231);
@@ -1744,52 +1742,52 @@ a:active {
   overflow: hidden;
 }
 
-#editor>h1 {
+#editor > h1 {
   color: white;
   font-size: 2rem;
   font-weight: 700;
   margin-top: 0px;
 }
 
-#editor>h2 {
+#editor > h2 {
   color: rgb(226, 230, 243);
   font-size: 1.8rem;
   font-weight: 600;
   margin-top: 0px;
 }
 
-#editor>h3 {
+#editor > h3 {
   color: rgb(211, 219, 230);
   font-size: 1.6rem;
   font-weight: 400;
   margin-top: 0px;
 }
 
-#editor>p>a {
+#editor > p > a {
   color: #ffb300 !important;
   border: none;
 }
 
-#editor>p>em {
+#editor > p > em {
   color: #e0e0e0;
 }
 
-#editor>p>a:hover {
+#editor > p > a:hover {
   border-bottom: 1px #387fe1 solid;
   -webkit-transition: border 1s linear;
   -ms-transition: border 1s linear;
   transition: border 1s linear;
 }
 
-#editor>p {
+#editor > p {
   color: #e0e0e0;
 }
 
-#editor>ul {
+#editor > ul {
   color: #e0e0e0;
 }
 
-#editor>span {
+#editor > span {
   color: #e0e0e0;
 }
 
@@ -1802,11 +1800,11 @@ a:active {
   margin-top: 10px;
 }
 
-.coinmarketcap-currency-widget>div {
+.coinmarketcap-currency-widget > div {
   border: none !important;
 }
 
-.coinmarketcap-currency-widget>div>div>div>span {
+.coinmarketcap-currency-widget > div > div > div > span {
   color: #e0e0e0 !important;
 }
 
@@ -1817,7 +1815,7 @@ a:active {
 }
 
 .fa-xs {
-  font-size: .35em;
+  font-size: 0.35em;
 }
 
 .align-middle {
