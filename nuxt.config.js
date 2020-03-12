@@ -34,7 +34,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/ga.js', mode: 'client' },
     { src: '~/plugins/uikit.js', ssr: false },
     { src: '~/plugins/fontawesome.js', ssr: false }
   ],
@@ -48,6 +47,7 @@ export default {
   */
 
   modules: [
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-W48RZQ7' }],
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@neneos/nuxt-animate.css',
