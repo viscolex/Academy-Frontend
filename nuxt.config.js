@@ -40,8 +40,14 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules: ["@nuxtjs/google-analytics"],
+  
+  googleAnalytics: {
+    id: "UA-130503642-2",
+    debug: {
+      enabled: false,
+    }
+  },
   /*
   ** Nuxt.js modules
   */
@@ -51,15 +57,7 @@ export default {
     '@nuxtjs/markdownit',
     '@neneos/nuxt-animate.css',
     '@nuxtjs/axios',
-    "@nuxtjs/google-analytics"
   ],
-
-  googleAnalytics: {
-    id: 'UA-130503642-2',
-    debug: {
-      enabled: false
-    }
-  },
 
   axios: {
     // proxyHeaders: false
