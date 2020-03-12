@@ -9,7 +9,7 @@
                 <h2
                   class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
                 >
-                  ARTICLESSS
+                  ARTICLESS
                   <a
                     href="/viewall"
                     class="uk-float-right uk-card view-all-button uk-box-shadow-small"
