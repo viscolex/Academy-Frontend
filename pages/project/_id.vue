@@ -3,7 +3,7 @@
     <div class="uk-container">
       <div class="uk-grid uk-grid-column-small">
         <div class="uk-width-1-4@s">
-          <div class="uk-card mt-3 card-background uk-box-shadow-small animated fadeIn fast">
+          <div class="uk-card mt-3 card-background uk-box-shadow-small  fast">
             <div class="uk-padding-small">
               <div class="uk-grid">
                 <div class="uk-text-center uk-width-1-2 uk-width-1-1@s">
@@ -13,8 +13,12 @@
                     alt="Fluid-grow image"
                     style="width: 40%; pointer-events: none;"
                   />
-                  <div class="uk-text-lead" style="color: white;">{{ projectintroduction.title }}</div>
-                  <div class="uk-text-meta">({{ projectintroduction.ticker }})</div>
+                  <div class="uk-text-lead" style="color: white;">
+                    {{ projectintroduction.title }}
+                  </div>
+                  <div class="uk-text-meta">
+                    ({{ projectintroduction.ticker }})
+                  </div>
                 </div>
                 <div
                   class="uk-text-center pt-3 uk-width-1-2 uk-width-1-1@s"
@@ -27,14 +31,17 @@
                       v-bind:href="projectintroduction.website"
                       id="link-hover"
                       target="_"
-                    >Website</a>
+                      >Website</a
+                    >
                   </div>
                   <div
                     v-if="projectintroduction.explorer"
                     v-bind:href="projectintroduction.explorer"
                   >
                     <i class="fas fa-database px-1"></i>
-                    <a class="uk-button-text mx-0" id="link-hover" target="_">Explorer</a>
+                    <a class="uk-button-text mx-0" id="link-hover" target="_"
+                      >Explorer</a
+                    >
                   </div>
                   <div v-if="projectintroduction.github">
                     <i class="fab fa-github px-1"></i>
@@ -43,7 +50,8 @@
                       v-bind:href="projectintroduction.github"
                       id="link-hover"
                       target="_"
-                    >Source Code</a>
+                      >Source Code</a
+                    >
                   </div>
                   <div v-if="projectintroduction.whitepaper">
                     <i class="fas fa-book-open px-1"></i>
@@ -52,7 +60,8 @@
                       v-bind:href="projectintroduction.whitepaper"
                       id="link-hover"
                       target="_"
-                    >Whitepaper</a>
+                      >Whitepaper</a
+                    >
                   </div>
                   <div v-if="projectintroduction.roadmap">
                     <i class="fas fa-route"></i>
@@ -61,7 +70,8 @@
                       v-bind:href="projectintroduction.roadmap"
                       id="link-hover"
                       target="_"
-                    >Roadmap</a>
+                      >Roadmap</a
+                    >
                   </div>
                   <div v-if="projectintroduction.team_members">
                     <i class="fas fa-user-tie"></i>
@@ -70,7 +80,8 @@
                       v-bind:href="projectintroduction.team_members"
                       id="link-hover"
                       target="_"
-                    >Team Members</a>
+                      >Team Members</a
+                    >
                   </div>
                   <div v-if="projectintroduction.coinmarketcap">
                     <img
@@ -82,7 +93,8 @@
                       v-bind:href="projectintroduction.coinmarketcap"
                       id="link-hover"
                       target="_"
-                    >Coinmarketcap</a>
+                      >Coinmarketcap</a
+                    >
                   </div>
                   <div v-if="projectintroduction.coingecko">
                     <img
@@ -94,47 +106,44 @@
                       v-bind:href="projectintroduction.coingecko"
                       id="link-hover"
                       target="_"
-                    >Coingecko</a>
+                      >Coingecko</a
+                    >
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <h2
-            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1 animated fadeIn fast"
-          >DETAILS</h2>
-          <div class="uk-card card-background uk-box-shadow-small animated fadeIn fast">
+            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1  fast"
+          >
+            DETAILS
+          </h2>
+          <div class="uk-card card-background uk-box-shadow-small  fast">
             <div class="uk-padding-small" style="font-size:0.95rem">
               <div v-if="projectintroduction.genesis">
                 <span class="uk-text-bold mr-1">Genesis Date:</span>
                 <span class="muted-white-text">
                   {{
-                  moment(projectintroduction.genesis).format("Do MMM YYYY")
+                    moment(projectintroduction.genesis).format("Do MMM YYYY")
                   }}
                 </span>
               </div>
               <div v-if="projectintroduction.consensus_type">
                 <span class="uk-text-bold mr-1">Consensus Type:</span>
                 <span class="muted-white-text">
-                  {{
-                  projectintroduction.consensus_type
-                  }}
+                  {{ projectintroduction.consensus_type }}
                 </span>
               </div>
               <div v-if="projectintroduction.algorithm">
                 <span class="uk-text-bold mr-1">Algorithm:</span>
                 <span class="muted-white-text">
-                  {{
-                  projectintroduction.algorithm
-                  }}
+                  {{ projectintroduction.algorithm }}
                 </span>
               </div>
               <div v-if="projectintroduction.block_time">
                 <span class="uk-text-bold mr-1">Block Time:</span>
                 <span class="muted-white-text">
-                  {{
-                  projectintroduction.block_time
-                  }}
+                  {{ projectintroduction.block_time }}
                 </span>
               </div>
               <div v-if="projectintroduction.max_supply">
@@ -147,9 +156,11 @@
             </div>
           </div>
           <h2
-            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1 animated fadeIn fast"
-          >COMMUNITY</h2>
-          <div class="uk-card card-background uk-box-shadow-small animated fadeIn fast">
+            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1  fast"
+          >
+            COMMUNITY
+          </h2>
+          <div class="uk-card card-background uk-box-shadow-small  fast">
             <div class="py-2 px-1">
               <div class="uk-clearfix">
                 <div class="uk-text-center">
@@ -169,7 +180,10 @@
                     v-bind:href="projectintroduction.telegram"
                     target="_"
                   >
-                    <i class="fab fa-telegram-plane" style="font-size:1.2rem;"></i>
+                    <i
+                      class="fab fa-telegram-plane"
+                      style="font-size:1.2rem;"
+                    ></i>
                   </a>
                   <a
                     v-if="projectintroduction.discord"
@@ -187,7 +201,10 @@
                     v-bind:href="projectintroduction.reddit"
                     target="_"
                   >
-                    <i class="fab fa-reddit-alien" style="font-size:1.2rem;"></i>
+                    <i
+                      class="fab fa-reddit-alien"
+                      style="font-size:1.2rem;"
+                    ></i>
                   </a>
                   <a
                     v-if="projectintroduction.facebook"
@@ -212,7 +229,7 @@
             </div>
           </div>
           <h2
-            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1 animated fadeIn fast"
+            class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2 mb-1  fast"
           >
             TRADE ON TXBIT
             <img
@@ -220,12 +237,15 @@
               style="height:20px; margin-bottom: 3px; pointer-events: none;"
             />
           </h2>
-          <div uk-margin class="m-0 animated fadeIn uk-grid fast">
+          <div uk-margin class="m-0  uk-grid fast">
             <a
               class="uk-button mb-2 uk-button-primary uk-box-shadow-small p-0 px-0 uk-width-1-3 uk-width-1-1@s uk-width-1-3@l"
               id="link-hover"
               v-bind:href="
-                'https://txbit.io/Trade/' + projectintroduction.ticker + '/BTC' + '/?r=3f1'
+                'https://txbit.io/Trade/' +
+                  projectintroduction.ticker +
+                  '/BTC' +
+                  '/?r=3f1'
               "
               target="_"
             >
@@ -235,7 +255,10 @@
               class="uk-button mb-2 uk-button-primary uk-box-shadow-small p-0 px-0 uk-width-1-3 uk-width-1-1@s uk-width-1-3@l"
               id="link-hover"
               v-bind:href="
-                'https://txbit.io/Trade/' + projectintroduction.ticker + '/ETH' + '/?r=3f1'
+                'https://txbit.io/Trade/' +
+                  projectintroduction.ticker +
+                  '/ETH' +
+                  '/?r=3f1'
               "
               target="_"
             >
@@ -245,7 +268,10 @@
               class="uk-button mb-2 uk-button-primary uk-box-shadow-small p-0 px-0 uk-width-1-3 uk-width-1-1@s uk-width-1-3@l"
               id="link-hover"
               v-bind:href="
-                'https://txbit.io/Trade/' + projectintroduction.ticker + '/XLR' + '/?r=3f1'
+                'https://txbit.io/Trade/' +
+                  projectintroduction.ticker +
+                  '/XLR' +
+                  '/?r=3f1'
               "
               target="_"
             >
@@ -254,12 +280,11 @@
           </div>
         </div>
         <div class="uk-width-3-4@s">
-          <div class="uk-card mt-3 card-background uk-box-shadow-small animated fadeIn fast">
+          <div class="uk-card mt-3 card-background uk-box-shadow-small  fast">
             <div class="uk-padding uk-padding-remove-bottom">
-              <h1
-                class="uk-text-center mb-0"
-                style="font-weight: 700;"
-              >{{ projectintroduction.title }} Introduction</h1>
+              <h1 class="uk-text-center mb-0" style="font-weight: 700;">
+                {{ projectintroduction.title }} Introduction
+              </h1>
             </div>
             <div class="uk-padding pt-4">
               <div
@@ -295,24 +320,29 @@
                   >
                     <i class="fas fa-calendar-alt"></i>
                     {{
-                    moment(projectintroduction.published_at).format(
-                    "Do MMM YYYY"
-                    )
+                      moment(projectintroduction.published_at).format(
+                        "Do MMM YYYY"
+                      )
                     }}
                   </span>
                 </div>
               </div>
-              <div class="uk-text-meta uk-text-center pt-4" style="font-size:0.7rem;">
+              <div
+                class="uk-text-meta uk-text-center pt-4"
+                style="font-size:0.7rem;"
+              >
                 <span>
-                  This publication does not offer investment advice and nothing in here be construed as investment advice.
-                  Our publications provide information and education for investors who can make their investment decisions.
+                  This publication does not offer investment advice and nothing
+                  in here be construed as investment advice. Our publications
+                  provide information and education for investors who can make
+                  their investment decisions.
                 </span>
               </div>
             </div>
           </div>
 
           <div
-            class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left animated fadeInUp"
+            class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up"
           >
             <a href="javascript:history.go(-1)">
               <div
@@ -321,7 +351,11 @@
               >
                 <div class="uk-padding-small article-actions-padding">
                   <i class="fas fa-arrow-left"></i>
-                  <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
+                  <span
+                    class="navbar-item-text"
+                    style="font-size: 1rem; font-weight:500;"
+                    >GO BACK</span
+                  >
                 </div>
               </div>
             </a>
@@ -330,7 +364,11 @@
                 class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
               >
                 <div class="uk-padding-small article-actions-padding">
-                  <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
+                  <span
+                    class="uk-text-bold"
+                    style="font-size: 1rem; font-weight:500;"
+                    >SHARE</span
+                  >
                   <i class="fas fa-chevron-right"></i>
                 </div>
               </div>
@@ -347,7 +385,9 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div
+                    class="uk-padding-small article-actions-padding category-hover"
+                  >
                     <span>
                       <i class="fab fa-twitter"></i>
                     </span>
@@ -367,7 +407,9 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div
+                    class="uk-padding-small article-actions-padding category-hover"
+                  >
                     <span>
                       <i class="fab fa-facebook"></i>
                     </span>
@@ -387,7 +429,9 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div
+                    class="uk-padding-small article-actions-padding category-hover"
+                  >
                     <span>
                       <i class="fab fa-linkedin"></i>
                     </span>
@@ -409,7 +453,9 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div
+                    class="uk-padding-small article-actions-padding category-hover"
+                  >
                     <span>
                       <i class="fab fa-telegram"></i>
                     </span>

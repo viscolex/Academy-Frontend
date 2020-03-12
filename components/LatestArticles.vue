@@ -8,7 +8,7 @@
         class="uk-width-1-2@s"
       >
         <div
-          class="uk-card uk-margin-bottom card-background uk-box-shadow-small animated fadeIn"
+          class="uk-card uk-margin-bottom card-background uk-box-shadow-small"
           id="link-hover"
         >
           <div v-if="article.image_src" class="uk-card-media-top">
@@ -27,17 +27,24 @@
                 id="category"
                 v-if="article.category"
                 class="uk-text-uppercase uk-float-left"
-              >{{ article.category.name }}</span>
+                >{{ article.category.name }}</span
+              >
             </div>
             <p
               id="title"
               class="uk-margin-remove-top title-bottom-border title-articles"
-            >{{ article.title }}</p>
+            >
+              {{ article.title }}
+            </p>
             <div class="uk-visible@l">
-              <span id="content">{{ article.content.substring(0, 250) + "..." }}</span>
+              <span id="content">{{
+                article.content.substring(0, 250) + "..."
+              }}</span>
             </div>
             <div class="uk-hidden@l">
-              <span id="content">{{ article.content.substring(0, 150) + "..." }}</span>
+              <span id="content">{{
+                article.content.substring(0, 150) + "..."
+              }}</span>
             </div>
           </div>
         </div>
@@ -51,10 +58,7 @@
           :to="{ name: 'articles-id', params: { id: article.id } }"
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
         >
-          <div
-            class="uk-card uk-margin-bottom card-background animated fadeIn"
-            id="link-hover"
-          >
+          <div class="uk-card uk-margin-bottom card-background" id="link-hover">
             <div v-if="article.image_src" class="uk-card-media-top">
               <img
                 :src="article.image_src"
@@ -69,9 +73,12 @@
                   id="category"
                   v-if="article.category"
                   class="uk-text-uppercase uk-float-left"
-                >{{ article.category.name }}</span>
+                  >{{ article.category.name }}</span
+                >
               </div>
-              <p id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</p>
+              <p id="title" class="uk-margin-remove-top title-articles">
+                {{ article.title }}
+              </p>
             </div>
           </div>
         </router-link>

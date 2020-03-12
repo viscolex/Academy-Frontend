@@ -4,7 +4,7 @@
       <div class="uk-container uk-container-expand">
         <div class="uk-grid uk-grid-column-medium">
           <div class="uk-width-1-2@l">
-            <div class="uk-clearfix animated fadeIn">
+            <div class="uk-clearfix">
               <div>
                 <h2
                   class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
@@ -27,7 +27,7 @@
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
-              class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
+              class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
             >
               PROJECTS
               <a
@@ -46,7 +46,7 @@
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
-              class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
+              class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
             >
               TXBIT NEWS
             </h2>

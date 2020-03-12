@@ -7,11 +7,15 @@
         style="width:100%"
       >
         <div
-          class="uk-card uk-margin-bottom container-fluid card-background uk-box-shadow-small animated fadeIn"
+          class="uk-card uk-margin-bottom container-fluid card-background uk-box-shadow-small "
         >
           <div class="p-2">
             <div class="row">
-              <h4 id="title-news" class="title-bottom-border" style="width:100%;">
+              <h4
+                id="title-news"
+                class="title-bottom-border"
+                style="width:100%;"
+              >
                 {{ newspost.title }}
                 <div v-if="newspost.url" class="uk-inline">
                   <a :href="newspost.url">
@@ -30,9 +34,7 @@
               <div class="uk-clearfix">
                 <div class="uk-float-right">
                   <span id="date">
-                    {{
-                    moment(newspost.published_at).format("Do MMM YYYY")
-                    }}
+                    {{ moment(newspost.published_at).format("Do MMM YYYY") }}
                   </span>
                 </div>
               </div>

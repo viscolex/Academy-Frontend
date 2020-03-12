@@ -1,8 +1,10 @@
 <template>
   <div>
     <h2
-      class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom animated fadeIn"
-    >MORE FROM TXBIT ACADEMY</h2>
+      class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom "
+    >
+      MORE FROM TXBIT ACADEMY
+    </h2>
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <router-link
         v-for="article in leftArticles"
@@ -11,7 +13,7 @@
         class="uk-width-1-2 uk-width-1-4@s"
       >
         <div
-          class="uk-card uk-margin-bottom card-background animated fadeIn more-articles-hover"
+          class="uk-card uk-margin-bottom card-background  more-articles-hover"
           id="link-hover"
         >
           <div v-if="article.image_src" class="uk-card-media-top">
@@ -28,9 +30,12 @@
                 id="category"
                 v-if="article.category"
                 class="uk-text-uppercase uk-float-left"
-              >{{ article.category.name }}</span>
+                >{{ article.category.name }}</span
+              >
             </div>
-            <p id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</p>
+            <p id="title" class="uk-margin-remove-top title-articles">
+              {{ article.title }}
+            </p>
           </div>
         </div>
       </router-link>
