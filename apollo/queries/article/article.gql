@@ -2,6 +2,7 @@ query Articles($id: ID!) {
   article(id: $id) {
     id
     title
+    slug
     content
     description
     keywords

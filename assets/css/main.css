@@ -2152,6 +2152,7 @@ a:active {
   .container-title {
     font-size: 1.5rem;
     margin-bottom: -7px;
+    margin-top: 5px;
   }
 
   .smaller-tabs-margins-mobile {

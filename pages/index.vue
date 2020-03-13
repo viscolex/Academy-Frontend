@@ -9,7 +9,7 @@
                 <h2
                   class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
                 >
-                  ARTICLES
+                  ARTICLE
                   <a
                     href="/viewall"
                     class="uk-float-right uk-card view-all-button uk-box-shadow-small"
@@ -40,16 +40,12 @@
               </a>
             </h2>
             <hr class="main-hr" />
-            <LatestProjects
-              :projectintroductions="projectintroductions"
-            ></LatestProjects>
+            <LatestProjects :projectintroductions="projectintroductions"></LatestProjects>
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-            >
-              TXBIT NEWS
-            </h2>
+            >TXBIT NEWS</h2>
             <hr class="main-hr" />
             <News />
           </div>
