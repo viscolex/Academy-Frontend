@@ -12,7 +12,7 @@
                   ARTICLES
                   <a
                     href="/viewall"
-                    class="uk-float-right uk-card view-all-button uk-box-shadow-small"
+                    class="uk-float-right uk-card view-all-button uk-box-shadow-small uk-visible@s"
                     id="link-hover"
                   >
                     <span class="navbar-item-text">VIEW ALL</span>
@@ -24,28 +24,44 @@
             </div>
 
             <LatestArticles :articles="articles"></LatestArticles>
+            <div class="uk-hidden@s uk-text-center">
+              <a
+                href="/viewall"
+                class=" uk-card view-all-button uk-box-shadow-small"
+                id="link-hover"
+              >
+                <span class="navbar-item-text">VIEW ALL ARTICLES</span>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+              </a>
+            </div>
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
             >
               PROJECTS
-              <a
-                href="/projects"
-                class="uk-float-right uk-card view-all-button uk-box-shadow-small"
-                id="link-hover"
-              >
-                <span class="navbar-item-text">VIEW ALL</span>
-                <i class="fas fa-arrow-alt-circle-right"></i>
-              </a>
             </h2>
             <hr class="main-hr" />
-            <LatestProjects :projectintroductions="projectintroductions"></LatestProjects>
+            <LatestProjects
+              :projectintroductions="projectintroductions"
+            ></LatestProjects>
+            <div class="uk-hidden@s uk-text-center">
+              <a
+                href="/projects"
+                class="uk-card view-all-button uk-box-shadow-small"
+                id="link-hover"
+              >
+                <span class="navbar-item-text">VIEW ALL PROJECTS</span>
+                <i class="fas fa-arrow-alt-circle-right"></i>
+              </a>
+            </div>
           </div>
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-            >TXBIT NEWS</h2>
+            >
+              TXBIT NEWS
+            </h2>
             <hr class="main-hr" />
             <News />
           </div>

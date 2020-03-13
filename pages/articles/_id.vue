@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="uk-container">
-      <div class="uk-card mt-3 card-background uk-box-shadow-small ">
+      <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <img
           :src="api_url + article.image_new.url"
           :alt="article.image_alt"
@@ -16,11 +16,7 @@
         </div>
         <div class="uk-padding">
           <div>
-            <div
-              v-if="article.content"
-              id="editor"
-              v-html="$md.render(article.content)"
-            ></div>
+            <div v-if="article.content" id="editor" v-html="$md.render(article.content)"></div>
             <div class="uk-clearfix">
               <div class="uk-float-right">
                 <span
@@ -37,21 +33,12 @@
         </div>
       </div>
 
-      <div
-        class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up"
-      >
+      <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
         <a href="javascript:history.go(-1)">
-          <div
-            class="uk-card card-background uk-box-shadow-small article-actions"
-            id="link-hover"
-          >
+          <div class="uk-card card-background uk-box-shadow-small article-actions" id="link-hover">
             <div class="uk-padding-small article-actions-padding">
               <i class="fas fa-arrow-left"></i>
-              <span
-                class="navbar-item-text"
-                style="font-size: 1rem; font-weight:500;"
-                >GO BACK</span
-              >
+              <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
             </div>
           </div>
         </a>
@@ -60,11 +47,7 @@
             class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
           >
             <div class="uk-padding-small article-actions-padding">
-              <span
-                class="uk-text-bold"
-                style="font-size: 1rem; font-weight:500;"
-                >SHARE</span
-              >
+              <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
               <i class="fas fa-chevron-right"></i>
             </div>
           </div>
@@ -81,9 +64,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <i class="fab fa-twitter"></i>
                 </span>
@@ -103,9 +84,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <i class="fab fa-facebook"></i>
                 </span>
@@ -125,9 +104,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <i class="fab fa-linkedin"></i>
                 </span>
@@ -149,9 +126,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <i class="fab fa-telegram"></i>
                 </span>
@@ -270,6 +245,12 @@ export default {
   },
   components: {
     MoreArticles
+  },
+  computed: {
+    function() {
+      const index = this.articles.indexOf(this.articles.id);
+      this.articles.splice(index, 1);
+    }
   },
   apollo: {
     article: {
