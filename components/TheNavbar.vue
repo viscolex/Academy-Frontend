@@ -7,20 +7,26 @@
         </a>
 
         <ul class="uk-navbar-nav uk-visible@s">
-          <li class>
-            <router-link to="/viewall" class="px-2" id="link-hover">
+          <li
+            :class="[currentPage.includes('categories') || currentPage.includes('viewall') || currentPage.includes('article') ? activeClass : '','navbar-item']"
+            id="link-hover"
+          >
+            <router-link to="/viewall" class="px-2">
               <i class="navbar-item fas fa-list text-warning mr-1"></i>
               <span class="navbar-item navbar-item-text">ARTICLES</span>
             </router-link>
           </li>
-          <li class>
-            <router-link to="/projects" class="px-2" id="link-hover">
+          <li
+            :class="[currentPage.includes('projects') || currentPage.includes('project') ? activeClass : '','navbar-item']"
+            id="link-hover"
+          >
+            <router-link to="/projects" class="px-2">
               <i class="navbar-item fas fa-book text-warning mr-1"></i>
               <span class="navbar-item navbar-item-text">Projects</span>
             </router-link>
           </li>
-          <li>
-            <a href="https://txbit.io" class="px-2" id="link-hover">
+          <li id="link-hover">
+            <a href="https://txbit.io" class="px-2">
               <i class="navbar-item fas fa-exchange-alt text-warning mr-1"></i>
               <span class="navbar-item navbar-item-text">EXCHANGE</span>
             </a>
@@ -36,24 +42,30 @@
     <div class="uk-hidden@s uk-modal-full" id="modal-full" uk-modal style="padding-top:46px;">
       <div class="uk-modal-dialog navbar-mobile-dropdown">
         <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
-          <div class="px-4 py-2">
+          <div class="mx-4 my-2">
             <div class="uk-width-1-2@s">
               <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
-                <li class>
-                  <a href="/viewall" id="link-hover">
-                    <i class="navbar-item fas fa-list text-warning mr-1"></i>
+                <li
+                  :class="[currentPage.includes('categories') || currentPage.includes('viewall') || currentPage.includes('article') ? activeClass : '','navbar-item']"
+                  id="link-hover"
+                >
+                  <a href="/viewall">
+                    <i class="navbar-item fas fa-list text-warning mr-1 ml-3"></i>
                     <span class="navbar-item navbar-item-text">ARTICLES</span>
                   </a>
                 </li>
-                <li class>
+                <li
+                  :class="[currentPage.includes('projects') || currentPage.includes('project') ? activeClass : '','navbar-item']"
+                  id="link-hover"
+                >
                   <a href="/projects" id="link-hover">
-                    <i class="navbar-item fas fa-book text-warning mr-1"></i>
+                    <i class="navbar-item fas fa-book text-warning mr-1 ml-3"></i>
                     <span class="navbar-item navbar-item-text">PROJECTS</span>
                   </a>
                 </li>
                 <li>
                   <a href="https://txbit.io" id="link-hover">
-                    <i class="navbar-item fas fa-exchange-alt text-warning mr-1"></i>
+                    <i class="navbar-item fas fa-exchange-alt text-warning mr-1 ml-3"></i>
                     <span class="navbar-item navbar-item-text">EXCHANGE</span>
                   </a>
                 </li>
@@ -67,5 +79,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      activeClass: "active-link"
+    };
+  },
+  computed: {
+    currentPage() {
+      return this.$route.path;
+    }
+  }
+};
 </script>
