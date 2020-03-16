@@ -30,13 +30,6 @@ export default {
   ** Global CSS
   */
 
- pageTransition: {
-    name: 'page',
-    mode: 'out-in',
-    duration: 250,
-  },
-
-
   css: [
     'uikit/dist/css/uikit.min.css',
     'uikit/dist/css/uikit.css',
