@@ -33,7 +33,7 @@ export default {
  pageTransition: {
     name: 'page',
     mode: 'out-in',
-    duration: 1000,
+    duration: 100,
   },
 
 
@@ -93,10 +93,6 @@ export default {
   /*
   ** Build configuration
   */
-  build: {
-    extend (config, ctx) {
-    }
-  },
   generate: {
     routes: function() {
       return [
