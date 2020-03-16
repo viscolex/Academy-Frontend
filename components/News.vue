@@ -1,11 +1,7 @@
 <template>
   <div id="news-container">
     <div class="uk-grid uk-grid-match hide-scrollbar">
-      <div
-        v-for="newspost in txbitnewsposts.reverse().slice(0, 10)"
-        :key="newspost.id"
-        style="width:100%"
-      >
+      <div v-for="newspost in allNews" :key="newspost.id" style="width:100%">
         <div
           class="uk-card uk-margin-bottom container-fluid card-background uk-box-shadow-small "
         >
@@ -19,10 +15,11 @@
                 {{ newspost.title }}
                 <div v-if="newspost.url" class="uk-inline">
                   <a :href="newspost.url">
-                    <i
-                      class="fas fa-external-link-alt ml-1 mb-1 news-link"
+                    <fa
+                      :icon="['fas', 'external-link-alt']"
+                      class="news-link mb-1"
                       style="color:#ffb300; font-size:.9rem"
-                    ></i>
+                    />
                   </a>
                 </div>
               </h4>
@@ -57,10 +54,16 @@ export default {
       moment: moment
     };
   },
+
   apollo: {
     txbitnewsposts: {
-      prefeth: true,
+      prefetch: true,
       query: txbitnewspostsQuery
+    }
+  },
+  computed: {
+    allNews() {
+      return this.txbitnewsposts.reverse().slice(0, 10);
     }
   }
 };

@@ -1689,21 +1689,6 @@ a:active {
   transition: color 0.3s ease-in-out 0s;
 }
 
-#button-hover {
-  color: rgb(231, 231, 231);
-  -webkit-transition: color 0.3s ease-in-out 0s;
-  -ms-transition: color 0.3s ease-in-out 0s;
-  transition: color 0.3s ease-in-out 0s;
-}
-
-#button-hover:hover {
-  color: #387fe1 !important;
-  border-color: #387fe1 !important;
-  -webkit-transition: color 0.3s ease-in-out 0s;
-  -ms-transition: color 0.3s ease-in-out 0s;
-  transition: color 0.3s ease-in-out 0s;
-}
-
 #link-hover,
 #button-hover {
   position: relative;
@@ -1729,6 +1714,21 @@ a:active {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+}
+
+#button-hover {
+  color: rgb(231, 231, 231);
+  -webkit-transition: color 0.3s ease-in-out 0s;
+  -ms-transition: color 0.3s ease-in-out 0s;
+  transition: color 0.3s ease-in-out 0s;
+}
+
+#button-hover:hover {
+  color: #387fe1 !important;
+  border-color: #387fe1 !important;
+  -webkit-transition: color 0.3s ease-in-out 0s;
+  -ms-transition: color 0.3s ease-in-out 0s;
+  transition: color 0.3s ease-in-out 0s;
 }
 
 .activeitem {
@@ -2125,6 +2125,7 @@ a:active {
 .page-leave-active {
   transition: opacity 0.5s;
 }
+
 .page-enter,
 .page-leave-to {
   opacity: 0;
@@ -2133,6 +2134,64 @@ a:active {
 .active-link {
   border-bottom: 1px solid #387fe1 !important;
   background-color: #2f3241;
+}
+
+#scrollPath {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.05);
+}
+
+#progressbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+#progressbar:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter: blur(10px);
+}
+
+#progressbar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  filter: blur(10px);
+}
+#indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10px;
+  background-color: red;
+  z-index: 999;
 }
 
 @media screen and (max-width: 640px) {

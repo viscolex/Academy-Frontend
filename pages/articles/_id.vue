@@ -2,21 +2,26 @@
   <div>
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
-        <img
-          :src="api_url + article.image_new.url"
-          :alt="article.image_alt"
-          width
-          height
-          style="pointer-events: none;"
-          uk-img
-        />
-
+        <div v-if="article.image_new">
+          <img
+            :src="api_url + article.image_new.url"
+            :alt="article.image_alt"
+            width
+            height
+            style="pointer-events: none;"
+            uk-img
+          />
+        </div>
         <div class="uk-text-center uk-padding uk-padding-remove-bottom">
           <h1 class="mb-0" style="font-weight: 700;">{{ article.title }}</h1>
         </div>
         <div class="uk-padding">
           <div>
-            <div v-if="article.content" id="editor" v-html="$md.render(article.content)"></div>
+            <div
+              v-if="article.content"
+              id="editor"
+              v-html="$md.render(article.content)"
+            ></div>
             <div class="uk-clearfix">
               <div class="uk-float-right">
                 <span
@@ -24,7 +29,7 @@
                   class="uk-article-meta mb-0"
                   style="color:#ffb300"
                 >
-                  <i class="fas fa-calendar-alt"></i>
+                  <fa icon="calendar-alt" />
                   {{ moment(article.published_at).format("Do MMM YYYY") }}
                 </span>
               </div>
@@ -33,12 +38,21 @@
         </div>
       </div>
 
-      <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
+      <div
+        class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up"
+      >
         <a href="javascript:history.go(-1)">
-          <div class="uk-card card-background uk-box-shadow-small article-actions" id="link-hover">
+          <div
+            class="uk-card card-background uk-box-shadow-small article-actions"
+            id="link-hover"
+          >
             <div class="uk-padding-small article-actions-padding">
-              <i class="fas fa-arrow-left"></i>
-              <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
+              <fa icon="arrow-left" />
+              <span
+                class="navbar-item-text"
+                style="font-size: 1rem; font-weight:500;"
+                >GO BACK</span
+              >
             </div>
           </div>
         </a>
@@ -47,8 +61,12 @@
             class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
           >
             <div class="uk-padding-small article-actions-padding">
-              <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
-              <i class="fas fa-chevron-right"></i>
+              <span
+                class="uk-text-bold"
+                style="font-size: 1rem; font-weight:500;"
+                >SHARE</span
+              >
+              <fa icon="chevron-right" />
             </div>
           </div>
           <a
@@ -64,9 +82,11 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div class="uk-padding-small article-actions-padding category-hover">
+              <div
+                class="uk-padding-small article-actions-padding category-hover"
+              >
                 <span>
-                  <i class="fab fa-twitter"></i>
+                  <fa :icon="['fab', 'twitter']" />
                 </span>
               </div>
             </div>
@@ -84,9 +104,11 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div class="uk-padding-small article-actions-padding category-hover">
+              <div
+                class="uk-padding-small article-actions-padding category-hover"
+              >
                 <span>
-                  <i class="fab fa-facebook"></i>
+                  <fa :icon="['fab', 'facebook']" />
                 </span>
               </div>
             </div>
@@ -104,9 +126,11 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div class="uk-padding-small article-actions-padding category-hover">
+              <div
+                class="uk-padding-small article-actions-padding category-hover"
+              >
                 <span>
-                  <i class="fab fa-linkedin"></i>
+                  <fa :icon="['fab', 'linkedin']" />
                 </span>
               </div>
             </div>
@@ -126,9 +150,11 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div class="uk-padding-small article-actions-padding category-hover">
+              <div
+                class="uk-padding-small article-actions-padding category-hover"
+              >
                 <span>
-                  <i class="fab fa-telegram"></i>
+                  <fa :icon="['fab', 'telegram']" />
                 </span>
               </div>
             </div>
@@ -145,18 +171,18 @@
 </template>
 
 <script>
-import articlesQuery from "~/apollo/queries/article/articles";
 import articleQuery from "~/apollo/queries/article/article";
+import articlesQuery from "~/apollo/queries/article/articles";
 import MoreArticles from "~/components/MoreArticles";
 var moment = require("moment");
 
 export default {
   data() {
     return {
-      articles: [],
+      api_url: process.env.strapiBaseUri,
       article: {},
-      moment: moment,
-      api_url: process.env.strapiBaseUri
+      articles: [],
+      moment: moment
     };
   },
   head() {
@@ -246,12 +272,7 @@ export default {
   components: {
     MoreArticles
   },
-  computed: {
-    function() {
-      const index = this.articles.indexOf(this.articles.id);
-      this.articles.splice(index, 1);
-    }
-  },
+
   apollo: {
     article: {
       prefetch: true,

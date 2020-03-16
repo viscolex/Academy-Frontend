@@ -20,13 +20,20 @@
             <p
               id="title-news"
               class="uk-margin-remove-top title-bottom-border title-articles"
-            >{{ projectintroduction.title }}</p>
+            >
+              {{ projectintroduction.title }}
+            </p>
             <div class="uk-grid">
               <div class="uk-width-3-4">
-                <span id="content">{{ projectintroduction.short_description }}</span>
+                <span id="content">{{
+                  projectintroduction.short_description
+                }}</span>
               </div>
               <div class="uk-width-1-4 pl-0 p-2 pb-1">
-                <div v-if="projectintroduction.image_new" class="uk-card-media-top">
+                <div
+                  v-if="projectintroduction.image_new"
+                  class="uk-card-media-top"
+                >
                   <img
                     :src="api_url + projectintroduction.image_new.url"
                     fluid-grow
@@ -50,13 +57,15 @@
                     Learn About
                     {{ projectintroduction.ticker }}
                   </span>
-                  <i class="fas fa-arrow-circle-right ml-1"></i>
+                  <fa :icon="['fas', 'arrow-alt-circle-right']" />
                 </div>
               </div>
               <div class="uk-float-left">
                 <span id="date">
                   {{
-                  moment(projectintroduction.published_at).format("Do MMM YYYY")
+                    moment(projectintroduction.published_at).format(
+                      "Do MMM YYYY"
+                    )
                   }}
                 </span>
               </div>

@@ -53,7 +53,7 @@
                   Learn About
                   {{ projectintroduction.ticker }}
                 </span>
-                <i class="fas fa-arrow-circle-right ml-1"></i>
+                <fa :icon="['fas', 'arrow-alt-circle-right']" />
               </div>
             </div>
             <div class="uk-text-center pb-0 uk-hidden@xl">
@@ -69,7 +69,7 @@
                   Learn About
                   {{ projectintroduction.ticker }}
                 </span>
-                <i class="fas fa-arrow-circle-right ml-1"></i>
+                <fa :icon="['fas', 'arrow-alt-circle-right']" />
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default {
   },
   apollo: {
     projectintroductions: {
-      prefeth: true,
+      prefetch: true,
       query: projectintroductionsQuery
     }
   }

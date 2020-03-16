@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="uk-grid uk-grid-match uk-grid-column-small">
-      <router-link
+      <nuxt-link
         v-for="article in leftArticles"
         :key="article.id"
         :to="{ name: 'articles-id', params: { id: article.id } }"
@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-      </router-link>
+      </nuxt-link>
     </div>
     <div class="uk-margin-remove-top uk-visible@m">
       <div class="uk-grid uk-grid-match uk-grid-column-small">

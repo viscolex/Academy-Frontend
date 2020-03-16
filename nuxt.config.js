@@ -20,7 +20,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Raleway:700,800&display=swap' }
-    ]
+    ],
   },
   /*
   ** Customize the progress-bar color
@@ -29,9 +29,17 @@ export default {
   /*
   ** Global CSS
   */
+
+ pageTransition: {
+    name: 'page',
+    mode: 'out-in',
+    duration: 0,
+  },
+
+
   css: [
+    'uikit/dist/css/uikit.min.css',
     'uikit/dist/css/uikit.css',
-    '@fortawesome/fontawesome-free/css/all.css',
     '@assets/css/main.css'
   ],
   /*
@@ -39,13 +47,20 @@ export default {
   */
   plugins: [
     { src: '~/plugins/uikit.js', ssr: false },
-    { src: '~/plugins/fontawesome.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     '@nuxtjs/gtm',
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      icons: {
+        solid: true,
+        regular: true,
+        brands:true,
+      }
+    }]
   ],
   gtm: {
     id: 'GTM-W48RZQ7',
@@ -58,15 +73,8 @@ export default {
 
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit',
-    '@neneos/nuxt-animate.css',
-    '@nuxtjs/axios',
+    '@nuxtjs/markdownit'
   ],
-
-  axios: {
-    // proxyHeaders: false
-  },
-
   markdownit: {  
     preset: 'default',
     html: true,
@@ -86,9 +94,8 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    extend (config, ctx) {
+    }
   },
   generate: {
     routes: function() {

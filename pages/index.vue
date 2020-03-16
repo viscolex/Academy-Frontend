@@ -16,7 +16,7 @@
                     id="link-hover"
                   >
                     <span class="navbar-item-text">VIEW ALL</span>
-                    <i class="fas fa-arrow-alt-circle-right"></i>
+                    <fa :icon="['fas', 'arrow-alt-circle-right']" />
                   </a>
                 </h2>
                 <hr class="main-hr" />
@@ -31,7 +31,7 @@
                 id="link-hover"
               >
                 <span class="navbar-item-text">VIEW ALL ARTICLES</span>
-                <i class="fas fa-arrow-alt-circle-right"></i>
+                <fa :icon="['fas', 'arrow-alt-circle-right']" />
               </a>
             </div>
           </div>
@@ -52,7 +52,7 @@
                 id="link-hover"
               >
                 <span class="navbar-item-text">VIEW ALL PROJECTS</span>
-                <i class="fas fa-arrow-alt-circle-right"></i>
+                <fa :icon="['fas', 'arrow-alt-circle-right']" />
               </a>
             </div>
           </div>

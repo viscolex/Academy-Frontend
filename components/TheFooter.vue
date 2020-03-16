@@ -12,7 +12,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >News</a>
+              >News</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -20,7 +21,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Licenses</a>
+              >Licenses</a
+            >
           </div>
         </div>
         <!-- Grid column -->
@@ -34,7 +36,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Fees</a>
+              >Fees</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -42,7 +45,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >System Status</a>
+              >System Status</a
+            >
           </div>
         </div>
         <!-- Grid column -->
@@ -56,7 +60,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Support Center</a>
+              >Support Center</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -64,7 +69,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Submit a Ticket</a>
+              >Submit a Ticket</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -72,7 +78,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >FAQ</a>
+              >FAQ</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -80,7 +87,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >API Documentation</a>
+              >API Documentation</a
+            >
           </div>
         </div>
         <!-- Grid column -->
@@ -94,7 +102,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Txbit Swaps</a>
+              >Txbit Swaps</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -102,7 +111,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Listing Application</a>
+              >Listing Application</a
+            >
           </div>
         </div>
         <!-- Grid column -->
@@ -116,7 +126,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Signup</a>
+              >Signup</a
+            >
           </div>
           <div class="uk-width-1-1 pb-2">
             <a
@@ -124,7 +135,8 @@
               target="_blank"
               class="uk-text-muted"
               id="link-hover"
-            >Login</a>
+              >Login</a
+            >
           </div>
         </div>
         <!-- Grid column -->
@@ -134,24 +146,44 @@
           <h5 class="uk-text-uppercase font-weight-bold">Social Media</h5>
           <div class="uk-width-1-1 pb-2">
             <a href="https://t.me/txbit" class="uk-text-muted" target="_blank">
-              <i class="fab fa-telegram fa-2x mr-3"></i>
+              <fa :icon="['fab', 'telegram']" class="fa-2x mr-3" />
             </a>
-            <a href="https://twitter.com/txbit_io" class="uk-text-muted" target="_blank">
-              <i class="fab fa-twitter-square fa-2x mr-3"></i>
+            <a
+              href="https://twitter.com/txbit_io"
+              class="uk-text-muted"
+              target="_blank"
+            >
+              <fa :icon="['fab', 'twitter-square']" class="fa-2x mr-3" />
             </a>
-            <a href="https://facebook.com/txbit.io/" class="uk-text-muted" target="_blank">
-              <i class="fab fa-facebook fa-2x"></i>
+            <a
+              href="https://facebook.com/txbit.io/"
+              class="uk-text-muted"
+              target="_blank"
+            >
+              <fa :icon="['fab', 'facebook']" class="fa-2x" />
             </a>
           </div>
           <div class="uk-width-1-1 pb-2">
-            <a href="https://reddit.com/r/txbit/" class="uk-text-muted" target="_blank">
-              <i class="fab fa-reddit-square fa-2x mr-3"></i>
+            <a
+              href="https://reddit.com/r/txbit/"
+              class="uk-text-muted"
+              target="_blank"
+            >
+              <fa :icon="['fab', 'reddit-square']" class="fa-2x mr-3" />
             </a>
-            <a href="https://medium.com/@txbit" class="uk-text-muted" target="_blank">
-              <i class="fab fa-medium fa-2x mr-3"></i>
+            <a
+              href="https://medium.com/@txbit"
+              class="uk-text-muted"
+              target="_blank"
+            >
+              <fa :icon="['fab', 'medium']" class="fa-2x mr-3" />
             </a>
-            <a href="https://discord.gg/JVSgRAW" class="uk-text-muted align-top" target="_blank">
-              <i class="fab fa-discord fa-2x mt-1"></i>
+            <a
+              href="https://discord.gg/JVSgRAW"
+              class="uk-text-muted align-top"
+              target="_blank"
+            >
+              <fa :icon="['fab', 'discord']" class="fa-2x mt-3" />
             </a>
           </div>
         </div>
@@ -163,38 +195,42 @@
       <div class="uk-text-center uk-text-muted mx-2 mt-3 pb-4">
         <span class="text-blue">Tx</span>
         <span class="text-warning">bit</span> Exchange B.V.
-        <i class="fas fa-circle fa-xs align-middle"></i> Poortland 66
-        <i class="fas fa-circle fa-xs align-middle"></i> 1046 BD
-        <i class="fas fa-circle fa-xs align-middle"></i> Amsterdam
-        <i class="fas fa-circle fa-xs align-middle"></i> The Netherlands
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> Poortland 66
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> 1046 BD
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> Amsterdam
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> The
+        Netherlands
         <br />
         <span class="text-blue">Tx</span>
         <span class="text-warning">bit</span> Exchange OÜ
-        <i class="fas fa-circle fa-xs align-middle"></i> Lõõtsa tn 5
-        <i class="fas fa-circle fa-xs align-middle"></i> 11415
-        <i class="fas fa-circle fa-xs align-middle"></i> Tallinn
-        <i class="fas fa-circle fa-xs align-middle"></i> Estonia
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> Lõõtsa tn 5
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> 11415
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> Tallinn
+        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" /> Estonia
         <br />
         <br />
-        <i class="fas fa-certificate mr-2"></i>Txbit Exchange is licensed in Estonia under license number
+        <fa :icon="['fas', 'certificate']" class="mr-1"/></i>Txbit Exchange is licensed in
+        Estonia under license number
         <a
           href="https://mtr.mkm.ee/taotluse_tulemus/523716?backurl=%40juriidiline_isik_show%3Fid%3D268371"
           target="_blank"
         >
           <span style="color:#007bff;" id="link-hover">FRK001136</span>
-        </a> and
+        </a>
+        and
         <a
           href="https://mtr.mkm.ee/taotluse_tulemus/523728?backurl=%40juriidiline_isik_show%3Fid%3D268371"
           target="_blank"
         >
           <span style="color:#007bff;" id="link-hover">FVR001252</span>
         </a>
-        <i class="fas fa-certificate ml-2"></i>
+        <fa :icon="['fas', 'certificate']" />
         <br />
         <br />
         <small class="text-muted">
           © 2020
-          <a href="https://www.txbit.io" target="_blank">Txbit Exchange B.V.</a> All rights reserved.
+          <a href="https://www.txbit.io" target="_blank">Txbit Exchange B.V.</a>
+          All rights reserved.
         </small>
       </div>
       <!-- Grid row-->
