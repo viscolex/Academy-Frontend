@@ -33,7 +33,7 @@ export default {
  pageTransition: {
     name: 'page',
     mode: 'out-in',
-    duration: 0,
+    duration: 1000,
   },
 
 

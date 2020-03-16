@@ -30,12 +30,16 @@
                 >{{ article.category.name }}</span
               >
               <div class="uk-float-right">
-                <span id="date">{{
+                <span id="date" v-if="article.published_at">{{
                   moment(article.published_at).format("Do MMM YYYY")
                 }}</span>
               </div>
             </div>
-            <p id="title" class="uk-margin-remove-top title-articles">
+            <p
+              id="title"
+              class="uk-margin-remove-top title-articles"
+              v-if="article.title"
+            >
               {{ article.title }}
             </p>
           </div>

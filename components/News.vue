@@ -25,12 +25,14 @@
               </h4>
             </div>
             <div class="row">
-              <span id="content">{{ newspost.content }}</span>
+              <span id="content" v-if="newspost.content">{{
+                newspost.content
+              }}</span>
             </div>
             <div class="row">
               <div class="uk-clearfix">
                 <div class="uk-float-right">
-                  <span id="date">
+                  <span id="date" v-if="published_at">
                     {{ moment(newspost.published_at).format("Do MMM YYYY") }}
                   </span>
                 </div>

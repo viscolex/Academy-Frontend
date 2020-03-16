@@ -16,6 +16,7 @@
           <p
             id="title-news"
             class="uk-margin-remove-top title-bottom-border title-articles"
+            v-if="projectintroduction.title"
           >
             {{ projectintroduction.title }}
           </p>
@@ -26,17 +27,14 @@
               </span>
             </div>
             <div class="uk-width-1-4 pl-0 p-2 pb-1">
-              <div
-                v-if="projectintroduction.image_new"
+              <img
+                :src="api_url + projectintroduction.image_new.url"
+                fluid-grow
+                alt="Fluid-grow image"
+                style="pointer-events: none;"
                 class="uk-card-media-top"
-              >
-                <img
-                  :src="api_url + projectintroduction.image_new.url"
-                  fluid-grow
-                  alt="Fluid-grow image"
-                  style="pointer-events: none;"
-                />
-              </div>
+                v-if="projectintroduction.image_new"
+              />
             </div>
           </div>
           <div class="uk-clearfix pt-0">
@@ -49,7 +47,10 @@
                 class="uk-button uk-button-default uk-button-small p-0"
                 id="button-hover"
               >
-                <span class="navbar-item-text">
+                <span
+                  class="navbar-item-text"
+                  v-if="projectintroduction.ticker"
+                >
                   Learn About
                   {{ projectintroduction.ticker }}
                 </span>
@@ -65,7 +66,10 @@
                 class="uk-button uk-button-default uk-button-small pl-1 pt-1"
                 id="button-hover"
               >
-                <span class="navbar-item-text">
+                <span
+                  class="navbar-item-text"
+                  v-if="projectintroduction.ticker"
+                >
                   Learn About
                   {{ projectintroduction.ticker }}
                 </span>

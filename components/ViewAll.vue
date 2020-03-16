@@ -12,32 +12,37 @@
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small"
           id="link-hover"
         >
-          <div v-if="article.image_new" class="uk-card-media-top">
-            <img
-              :src="api_url + article.image_new.url"
-              :alt="article.image_alt"
-              width
-              height
-              style="pointer-events: none;"
-              uk-img
-            />
-          </div>
+          <img
+            v-if="article.image_new"
+            :src="api_url + article.image_new.url"
+            :alt="article.image_alt"
+            width
+            height
+            class="uk-card-media-top"
+            style="pointer-events: none;"
+            uk-img
+          />
           <div class="uk-padding-small pt-2 pb-2">
             <div class="row px-1 uk-clearfix">
               <span
                 id="category"
                 v-if="article.category"
                 class="uk-text-uppercase uk-float-left"
-              >{{ article.category.name }}</span>
+                >{{ article.category.name }}</span
+              >
               <div class="uk-float-right">
-                <span id="date">
-                  {{
-                  moment(article.published_at).format("Do MMM YYYY")
-                  }}
+                <span id="date" v-if="article.published_at">
+                  {{ moment(article.published_at).format("Do MMM YYYY") }}
                 </span>
               </div>
             </div>
-            <p id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</p>
+            <p
+              id="title"
+              class="uk-margin-remove-top title-articles"
+              v-if="article.title"
+            >
+              {{ article.title }}
+            </p>
           </div>
         </div>
       </router-link>

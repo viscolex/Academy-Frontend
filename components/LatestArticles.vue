@@ -11,16 +11,16 @@
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small"
           id="link-hover"
         >
-          <div v-if="article.image_new" class="uk-card-media-top">
-            <img
-              :src="api_url + article.image_new.url"
-              :alt="article.image_alt"
-              width
-              height
-              style="pointer-events: none;"
-              uk-img
-            />
-          </div>
+          <img
+            v-if="article.image_new"
+            :src="api_url + article.image_new.url"
+            :alt="article.image_alt"
+            width
+            height
+            class="uk-card-media-top"
+            style="pointer-events: none;"
+            uk-img
+          />
           <div class="uk-padding-small pt-2 pb-2">
             <div class="row px-1 uk-clearfix">
               <span
@@ -33,16 +33,17 @@
             <p
               id="title"
               class="uk-margin-remove-top title-bottom-border title-articles"
+              v-if="article.title"
             >
               {{ article.title }}
             </p>
             <div class="uk-visible@l">
-              <span id="content">{{
+              <span id="content" v-if="article.content">{{
                 article.content.substring(0, 250) + "..."
               }}</span>
             </div>
             <div class="uk-hidden@l">
-              <span id="content">{{
+              <span id="content" v-if="article.content">{{
                 article.content.substring(0, 150) + "..."
               }}</span>
             </div>
@@ -59,12 +60,13 @@
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
         >
           <div class="uk-card uk-margin-bottom card-background" id="link-hover">
-            <div v-if="article.image_new" class="uk-card-media-top">
+            <div v-if="article.image_new">
               <img
                 :src="api_url + article.image_new.url"
                 :alt="article.image_alt"
                 fluid-grow
                 style="pointer-events: none;"
+                class="uk-card-media-top"
               />
             </div>
             <div class="uk-padding-small pt-2 pb-2">
@@ -76,7 +78,11 @@
                   >{{ article.category.name }}</span
                 >
               </div>
-              <p id="title" class="uk-margin-remove-top title-articles">
+              <p
+                id="title"
+                class="uk-margin-remove-top title-articles"
+                v-if="article.title"
+              >
                 {{ article.title }}
               </p>
             </div>
