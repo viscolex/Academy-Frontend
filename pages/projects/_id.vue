@@ -36,7 +36,7 @@ export default {
   },
   apollo: {
     projectintroductions: {
-      prefeth: true,
+      prefetch: true,
       query: projectintroductionsQuery
     }
   }
