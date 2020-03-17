@@ -4,7 +4,7 @@ export default {
     strapiBaseUri: process.env.API_URL || "https://txbit.academy/_nuxt"
   },
   
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -89,6 +89,15 @@ export default {
   /*
   ** Build configuration
   */
+
+  build: {
+    html: {
+      minify: {
+        collapseWhitespace: true,  // as @dario30186 mentioned
+        removeComments: true, // 👈 add this line
+      },
+    },
+  },
   generate: {
     routes: function() {
       return [

@@ -1,16 +1,16 @@
 <template>
-  <div v-show="projectintroductions != null || undefined">
-    <div class="uk-container uk-container-expand">
-      <h2
-        class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom "
-      >
-        PROJECT INTRODUCTIONS
-      </h2>
-      <hr class="main-hr" />
-      <ViewAllProjects
-        :projectintroductions="projectintroductions"
-      ></ViewAllProjects>
-    </div>
+  <div>
+    <client-only>
+      <div v-show="projectintroductions != null || undefined">
+        <div class="uk-container uk-container-expand">
+          <h2
+            class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
+          >PROJECT INTRODUCTIONS</h2>
+          <hr class="main-hr" />
+          <ViewAllProjects :projectintroductions="projectintroductions"></ViewAllProjects>
+        </div>
+      </div>
+    </client-only>
   </div>
 </template>
 
