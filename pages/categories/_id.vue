@@ -29,9 +29,12 @@
               class="uk-padding-small category-tabs"
               v-bind:class="{ activeitem: category.id === activeItem }"
             >
-              <h4 class="uk-text-uppercase category-tabs">
+              <div
+                v-show="category.name"
+                class="uk-text-uppercase category-tabs"
+              >
                 {{ category.name }}
-              </h4>
+              </div>
             </div>
           </nuxt-link>
         </div>

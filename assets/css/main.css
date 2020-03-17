@@ -214,8 +214,8 @@ label {
   color: white;
 }
 
-.day-mode .navbar-dark .navbar-nav .show > .nav-link,
-.day-mode .navbar-dark .navbar-nav .active > .nav-link,
+.day-mode .navbar-dark .navbar-nav .show>.nav-link,
+.day-mode .navbar-dark .navbar-nav .active>.nav-link,
 .day-mode .navbar-dark .navbar-nav .nav-link.show,
 .day-mode .navbar-dark .navbar-nav .nav-link.active {
   color: #387fe1;
@@ -779,15 +779,15 @@ h4 {
   transition: 0.4s;
 }
 
-input:checked + .switch-slider {
+input:checked+.switch-slider {
   background-color: #387fe1 !important;
 }
 
-input:focus + .switch-slider {
+input:focus+.switch-slider {
   box-shadow: 0 0 1px #387fe1 !important;
 }
 
-input:checked + .switch-slider:before {
+input:checked+.switch-slider:before {
   -webkit-transform: translateX(13px);
   -ms-transform: translateX(13px);
   transform: translateX(13px);
@@ -892,6 +892,7 @@ h5 {
 }
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
+
   0%,
   70%,
   100% {
@@ -906,6 +907,7 @@ h5 {
 }
 
 @keyframes sk-cubeGridScaleDelay {
+
   0%,
   70%,
   100% {
@@ -1584,8 +1586,8 @@ a:active {
   transition: background-color color 0.3s linear !important;
 }
 
-.uk-button-primary:hover > span,
-.view-all-button:hover > span {
+.uk-button-primary:hover>span,
+.view-all-button:hover>span {
   color: white !important;
 }
 
@@ -1613,7 +1615,7 @@ a:active {
   margin-bottom: -9px;
 }
 
-.uk-navbar-nav > li > a,
+.uk-navbar-nav>li>a,
 .uk-navbar-item,
 .uk-navbar-toggle {
   min-height: 46px;
@@ -1743,52 +1745,52 @@ a:active {
   overflow: hidden;
 }
 
-#editor > h1 {
+#editor>h1 {
   color: white;
   font-size: 2rem;
   font-weight: 700;
   margin-top: 0px;
 }
 
-#editor > h2 {
+#editor>h2 {
   color: rgb(226, 230, 243);
   font-size: 1.8rem;
   font-weight: 600;
   margin-top: 0px;
 }
 
-#editor > h3 {
+#editor>h3 {
   color: rgb(211, 219, 230);
   font-size: 1.6rem;
   font-weight: 400;
   margin-top: 0px;
 }
 
-#editor > p > a {
+#editor>p>a {
   color: #ffb300 !important;
   border: none;
 }
 
-#editor > p > em {
+#editor>p>em {
   color: #e0e0e0;
 }
 
-#editor > p > a:hover {
+#editor>p>a:hover {
   border-bottom: 1px #387fe1 solid;
   -webkit-transition: border 1s linear;
   -ms-transition: border 1s linear;
   transition: border 1s linear;
 }
 
-#editor > p {
+#editor>p {
   color: #e0e0e0;
 }
 
-#editor > ul {
+#editor>ul {
   color: #e0e0e0;
 }
 
-#editor > span {
+#editor>span {
   color: #e0e0e0;
 }
 
@@ -1801,11 +1803,11 @@ a:active {
   margin-top: 10px;
 }
 
-.coinmarketcap-currency-widget > div {
+.coinmarketcap-currency-widget>div {
   border: none !important;
 }
 
-.coinmarketcap-currency-widget > div > div > div > span {
+.coinmarketcap-currency-widget>div>div>div>span {
   color: #e0e0e0 !important;
 }
 
@@ -2134,64 +2136,7 @@ a:active {
 .active-link {
   border-bottom: 1px solid #387fe1 !important;
   background-color: #2f3241;
-}
-
-#scrollPath {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 100%;
-  background: rgb(255, 255, 255, 0.05);
-}
-
-#progressbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  animation: animate 5s linear infinite;
-}
-
-@keyframes animate {
-  0%,
-  100% {
-    filter: hue-rotate(0deg);
-  }
-  50% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-#progressbar:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  filter: blur(10px);
-}
-
-#progressbar:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #008aff, #00ffe7);
-  filter: blur(10px);
-}
-#indicator {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 10px;
-  background-color: red;
-  z-index: 999;
+  margin-top: -1px;
 }
 
 @media screen and (max-width: 640px) {
