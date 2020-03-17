@@ -4,7 +4,7 @@ export default {
     strapiBaseUri: process.env.API_URL || "https://txbit.academy/_nuxt"
   },
   
-  mode: 'universal',
+  mode: 'spa',
   /*
   ** Headers of the page
   */

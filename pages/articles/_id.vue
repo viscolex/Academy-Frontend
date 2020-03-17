@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-show="article != null || undefined">
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
-        <div v-show="article.image_new">
+        <div v-if="article.image_new">
           <img
             :src="api_url + article.image_new.url"
             :alt="article.image_alt"
@@ -17,10 +17,14 @@
         </div>
         <div class="uk-padding">
           <div>
-            <div id="editor" v-html="$md.render(article.content)"></div>
+            <div v-if="article.content" id="editor" v-html="$md.render(article.content)"></div>
             <div class="uk-clearfix">
               <div class="uk-float-right">
-                <span class="uk-article-meta mb-0" style="color:#ffb300">
+                <span
+                  v-if="article.published_at"
+                  class="uk-article-meta mb-0"
+                  style="color:#ffb300"
+                >
                   <fa icon="calendar-alt" />
                   {{ moment(article.published_at).format("Do MMM YYYY") }}
                 </span>
