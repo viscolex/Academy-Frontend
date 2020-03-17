@@ -46,6 +46,14 @@ export default {
   */
   buildModules: [
     '@nuxtjs/gtm',
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      icons: {
+        solid: true,
+        regular: true,
+        brands:true,
+      }
+    }]
   ],
   gtm: {
     id: 'GTM-W48RZQ7',

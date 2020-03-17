@@ -17,13 +17,13 @@
           id="introduction-card"
         >
           <div class="uk-padding-small pt-2 pb-2" id="link-hover">
-            <p
+            <div
               id="title-news"
               class="uk-margin-remove-top title-bottom-border title-articles"
               v-show="projectintroduction.title"
             >
               {{ projectintroduction.title }}
-            </p>
+            </div>
             <div class="uk-grid">
               <div class="uk-width-3-4">
                 <span id="content">{{

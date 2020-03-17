@@ -7,7 +7,8 @@
         >
           <div class="p-2">
             <div class="row">
-              <h4
+              <div
+                v-show="newspost.url"
                 id="title-news"
                 class="title-bottom-border"
                 style="width:100%;"
@@ -22,7 +23,7 @@
                     />
                   </a>
                 </div>
-              </h4>
+              </div>
             </div>
             <div class="row">
               <span id="content" v-show="newspost.content">{{

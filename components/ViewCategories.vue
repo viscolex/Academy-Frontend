@@ -11,16 +11,13 @@
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small "
           id="link-hover"
         >
-          <div v-show="article.image_new" class="uk-card-media-top">
-            <img
-              :src="api_url + article.image_new.url"
-              :alt="article.image_alt"
-              width
-              height
-              style="pointer-events: none;"
-              uk-img
-            />
-          </div>
+          <img
+            v-show="article.image_new"
+            class="uk-card-media-top"
+            :src="api_url + article.image_new.url"
+            :alt="article.image_alt"
+            style="pointer-events: none;"
+          />
           <div class="uk-padding-small pt-2 pb-2">
             <div class="row px-1 uk-clearfix">
               <span

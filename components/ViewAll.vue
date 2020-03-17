@@ -8,7 +8,6 @@
         class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
       >
         <div
-          v-show="article.content"
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small"
           id="link-hover"
         >
@@ -16,11 +15,8 @@
             v-show="article.image_new"
             :src="api_url + article.image_new.url"
             :alt="article.image_alt"
-            width
-            height
             class="uk-card-media-top"
             style="pointer-events: none;"
-            uk-img
           />
           <div class="uk-padding-small pt-2 pb-2">
             <div class="row px-1 uk-clearfix">
@@ -36,13 +32,13 @@
                 </span>
               </div>
             </div>
-            <p
+            <div
               id="title"
               class="uk-margin-remove-top title-articles"
               v-show="article.title"
             >
               {{ article.title }}
-            </p>
+            </div>
           </div>
         </div>
       </router-link>

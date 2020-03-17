@@ -25,18 +25,18 @@
             <div class="row px-1 uk-clearfix">
               <span
                 id="category"
-                v-if="article.category"
+                v-show="article.category"
                 class="uk-text-uppercase uk-float-left"
                 >{{ article.category.name }}</span
               >
             </div>
-            <p
+            <div
               id="title"
               class="uk-margin-remove-top title-bottom-border title-articles"
               v-show="article.title"
             >
               {{ article.title }}
-            </p>
+            </div>
             <div class="uk-visible@l">
               <span id="content" v-show="article.content">{{
                 article.content.substring(0, 250) + "..."
@@ -78,13 +78,13 @@
                   >{{ article.category.name }}</span
                 >
               </div>
-              <p
+              <div
                 id="title"
                 class="uk-margin-remove-top title-articles"
                 v-show="article.title"
               >
                 {{ article.title }}
-              </p>
+              </div>
             </div>
           </div>
         </router-link>

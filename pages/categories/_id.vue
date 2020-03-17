@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="uk-container uk-container-expand">
-      <div class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1">
-        <div class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse">
-          <a href="/viewall">
+      <div
+        class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1"
+      >
+        <div
+          class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse"
+        >
+          <nuxt-link to="/viewall">
             <div
               class="uk-card uk-margin-small-right uk-margin-small-left smaller-tabs-margins-mobile"
               id="link-hover"
@@ -12,8 +16,8 @@
                 <h4 class="uk-text-uppercase category-tabs">ALL</h4>
               </div>
             </div>
-          </a>
-          <router-link
+          </nuxt-link>
+          <nuxt-link
             v-for="category in categories"
             v-bind:key="category.id"
             :to="{ name: 'categories-id', params: { id: category.id } }"
@@ -25,9 +29,11 @@
               class="uk-padding-small category-tabs"
               v-bind:class="{ activeitem: category.id === activeItem }"
             >
-              <h4 class="uk-text-uppercase category-tabs">{{ category.name }}</h4>
+              <h4 class="uk-text-uppercase category-tabs">
+                {{ category.name }}
+              </h4>
             </div>
-          </router-link>
+          </nuxt-link>
         </div>
       </div>
       <ViewCategories :articles="category.articles || []"></ViewCategories>
@@ -68,6 +74,13 @@ export default {
       prefetch: true,
       query: categoriesQuery
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
   }
 };
 </script>

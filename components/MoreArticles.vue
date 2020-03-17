@@ -17,26 +17,26 @@
           class="uk-card uk-margin-bottom card-background more-articles-hover"
           id="link-hover"
         >
-          <div v-if="article.image_new" class="uk-card-media-top">
-            <img
-              :src="api_url + article.image_new.url"
-              fluid-grow
-              alt="article.image_alt"
-              style="pointer-events: none;"
-            />
-          </div>
+          <img
+            :src="api_url + article.image_new.url"
+            fluid-grow
+            alt="article.image_alt"
+            style="pointer-events: none;"
+            v-show="article.image_new"
+            class="uk-card-media-top"
+          />
           <div class="uk-padding-small pt-2 pb-2">
             <div class="row px-1 uk-clearfix">
               <span
                 id="category"
-                v-if="article.category"
+                v-show="article.category"
                 class="uk-text-uppercase uk-float-left"
                 >{{ article.category.name }}</span
               >
             </div>
-            <p id="title" class="uk-margin-remove-top title-articles">
+            <div id="title" class="uk-margin-remove-top title-articles">
               {{ article.title }}
-            </p>
+            </div>
           </div>
         </div>
       </router-link>
