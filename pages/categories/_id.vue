@@ -1,5 +1,5 @@
 <template>
-  <div v-if="category != null || undefined">
+  <div v-show="category != null || undefined">
     <div class="uk-container uk-container-expand">
       <div
         class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1"

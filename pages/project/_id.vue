@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="projectintroduction != null || undefined">
     <div class="uk-container">
       <div class="uk-grid uk-grid-column-small">
         <div class="uk-width-1-4@m">

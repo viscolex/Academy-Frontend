@@ -1,5 +1,5 @@
 <template>
-  <div v-if="projectintroductions != null || undefined">
+  <div v-show="projectintroductions != null || undefined">
     <router-link
       v-for="projectintroduction in projectintroductions.slice(0, 2).reverse()"
       :key="projectintroduction.id"

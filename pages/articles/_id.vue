@@ -1,5 +1,5 @@
 <template>
-  <div v-if="article != null || undefined">
+  <div v-show="article != null || undefined">
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <div v-if="article.image_new">

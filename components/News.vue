@@ -1,5 +1,5 @@
 <template>
-  <div id="news-container" v-if="allNews != null || undefined">
+  <div id="news-container" v-show="allNews != null || undefined">
     <div class="uk-grid uk-grid-match hide-scrollbar">
       <div v-for="newspost in allNews" :key="newspost.id" style="width:100%">
         <div

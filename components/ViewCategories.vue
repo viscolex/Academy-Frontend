@@ -1,5 +1,5 @@
 <template>
-  <div v-if="allArticles != null || undefined">
+  <div v-show="allArticles != null || undefined">
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <router-link
         v-for="article in allArticles"
