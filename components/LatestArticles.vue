@@ -12,7 +12,7 @@
           id="link-hover"
         >
           <img
-            v-if="article.image_new"
+            v-show="article.image_new"
             :src="api_url + article.image_new.url"
             :alt="article.image_alt"
             width
@@ -33,17 +33,17 @@
             <p
               id="title"
               class="uk-margin-remove-top title-bottom-border title-articles"
-              v-if="article.title"
+              v-show="article.title"
             >
               {{ article.title }}
             </p>
             <div class="uk-visible@l">
-              <span id="content" v-if="article.content">{{
+              <span id="content" v-show="article.content">{{
                 article.content.substring(0, 250) + "..."
               }}</span>
             </div>
             <div class="uk-hidden@l">
-              <span id="content" v-if="article.content">{{
+              <span id="content" v-show="article.content">{{
                 article.content.substring(0, 150) + "..."
               }}</span>
             </div>
@@ -60,7 +60,7 @@
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
         >
           <div class="uk-card uk-margin-bottom card-background" id="link-hover">
-            <div v-if="article.image_new">
+            <div v-show="article.image_new">
               <img
                 :src="api_url + article.image_new.url"
                 :alt="article.image_alt"
@@ -73,7 +73,7 @@
               <div class="row px-1 uk-clearfix">
                 <span
                   id="category"
-                  v-if="article.category"
+                  v-show="article.category"
                   class="uk-text-uppercase uk-float-left"
                   >{{ article.category.name }}</span
                 >
@@ -81,7 +81,7 @@
               <p
                 id="title"
                 class="uk-margin-remove-top title-articles"
-                v-if="article.title"
+                v-show="article.title"
               >
                 {{ article.title }}
               </p>

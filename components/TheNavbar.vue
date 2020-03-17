@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav uk-sticky class="uk-navbar-container bg-dark" uk-navbar>
+    <nav class="uk-navbar-container bg-dark uk-sticky uk-navbar">
       <div class="uk-navbar-left">
         <nuxt-link
           class="uk-navbar-item uk-logo"
@@ -81,10 +81,10 @@
                   ]"
                   id="link-hover"
                 >
-                  <a href="/viewall">
+                  <router-link to="/viewall">
                     <fa icon="list" class="text-warning navbar-item mr-1" />
                     <span class="navbar-item navbar-item-text">ARTICLES</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li
                   :class="[
@@ -96,10 +96,10 @@
                   ]"
                   id="link-hover"
                 >
-                  <a href="/projects" id="link-hover">
+                  <router-link to="/projects" id="link-hover">
                     <fa icon="book" class="text-warning navbar-item mr-1" />
                     <span class="navbar-item navbar-item-text">PROJECTS</span>
-                  </a>
+                  </router-link>
                 </li>
                 <li>
                   <a href="https://txbit.io" id="link-hover">

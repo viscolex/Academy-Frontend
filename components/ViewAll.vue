@@ -8,12 +8,12 @@
         class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
       >
         <div
-          v-if="article.content"
+          v-show="article.content"
           class="uk-card uk-margin-bottom card-background uk-box-shadow-small"
           id="link-hover"
         >
           <img
-            v-if="article.image_new"
+            v-show="article.image_new"
             :src="api_url + article.image_new.url"
             :alt="article.image_alt"
             width
@@ -26,12 +26,12 @@
             <div class="row px-1 uk-clearfix">
               <span
                 id="category"
-                v-if="article.category"
+                v-show="article.category"
                 class="uk-text-uppercase uk-float-left"
                 >{{ article.category.name }}</span
               >
               <div class="uk-float-right">
-                <span id="date" v-if="article.published_at">
+                <span id="date" v-show="article.published_at">
                   {{ moment(article.published_at).format("Do MMM YYYY") }}
                 </span>
               </div>
@@ -39,7 +39,7 @@
             <p
               id="title"
               class="uk-margin-remove-top title-articles"
-              v-if="article.title"
+              v-show="article.title"
             >
               {{ article.title }}
             </p>

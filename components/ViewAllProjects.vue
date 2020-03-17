@@ -20,7 +20,7 @@
             <p
               id="title-news"
               class="uk-margin-remove-top title-bottom-border title-articles"
-              v-if="projectintroduction.title"
+              v-show="projectintroduction.title"
             >
               {{ projectintroduction.title }}
             </p>
@@ -32,7 +32,7 @@
               </div>
               <div class="uk-width-1-4 pl-0 p-2 pb-1">
                 <img
-                  v-if="projectintroduction.image_new"
+                  v-show="projectintroduction.image_new"
                   class="uk-card-media-top"
                   :src="api_url + projectintroduction.image_new.url"
                   fluid-grow
@@ -44,16 +44,12 @@
             <div class="uk-clearfix pt-0">
               <div class="uk-float-right pb-1">
                 <div
-                  :to="{
-                    name: 'projects-id',
-                    params: { id: projectintroduction.id }
-                  }"
                   class="uk-button uk-button-default uk-button-small uk-button-text"
                   id="button-hover"
                 >
                   <span
                     class="navbar-item-text"
-                    v-if="projectintroduction.ticker"
+                    v-show="projectintroduction.ticker"
                   >
                     Learn About
                     {{ projectintroduction.ticker }}
@@ -62,7 +58,7 @@
                 </div>
               </div>
               <div class="uk-float-left">
-                <span id="date" v-if="projectintroduction.published_at">
+                <span id="date" v-show="projectintroduction.published_at">
                   {{
                     moment(projectintroduction.published_at).format(
                       "Do MMM YYYY"

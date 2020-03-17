@@ -13,7 +13,7 @@
                 style="width:100%;"
               >
                 {{ newspost.title }}
-                <div v-if="newspost.url" class="uk-inline">
+                <div v-show="newspost.url" class="uk-inline">
                   <a :href="newspost.url">
                     <fa
                       :icon="['fas', 'external-link-alt']"
@@ -25,14 +25,14 @@
               </h4>
             </div>
             <div class="row">
-              <span id="content" v-if="newspost.content">{{
+              <span id="content" v-show="newspost.content">{{
                 newspost.content
               }}</span>
             </div>
             <div class="row">
               <div class="uk-clearfix">
                 <div class="uk-float-right">
-                  <span id="date" v-if="published_at">
+                  <span id="date" v-show="published_at">
                     {{ moment(newspost.published_at).format("Do MMM YYYY") }}
                   </span>
                 </div>
