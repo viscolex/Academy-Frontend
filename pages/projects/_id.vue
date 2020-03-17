@@ -20,6 +20,13 @@ import ViewAllProjects from "~/components/ViewAllProjects";
 var moment = require("moment");
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
+  },
   data() {
     return {
       projectintroductions: [],
@@ -39,13 +46,6 @@ export default {
       prefetch: true,
       query: projectintroductionsQuery
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
   }
 };
 </script>

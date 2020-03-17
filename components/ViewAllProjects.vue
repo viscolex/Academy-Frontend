@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="projectintroductions != null || undefined">
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <router-link
         v-for="projectintroduction in projectintroductions

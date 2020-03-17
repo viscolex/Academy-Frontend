@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="article != null || undefined">
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <div v-if="article.image_new">
@@ -177,6 +177,13 @@ import MoreArticles from "~/components/MoreArticles";
 var moment = require("moment");
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
+  },
   data() {
     return {
       api_url: process.env.strapiBaseUri,
@@ -288,13 +295,6 @@ export default {
         return { id: parseInt(this.$route.params.id) };
       }
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
   }
 };
 </script>

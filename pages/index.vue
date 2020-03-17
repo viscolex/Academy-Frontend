@@ -79,6 +79,13 @@ import LatestProjects from "~/components/LatestProjects";
 import News from "~/components/News";
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
+  },
   data() {
     return {
       articles: [],
@@ -110,13 +117,6 @@ export default {
         return { id: parseInt(this.$route.params.id) };
       }
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
   }
 };
 </script>

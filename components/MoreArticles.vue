@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="randomArticles != null || undefined">
     <h2
       class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
     >

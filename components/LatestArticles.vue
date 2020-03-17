@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="leftArticles || rightArticles != null || undefined">
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <nuxt-link
         v-for="article in leftArticles"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="categories != null || undefined">
     <div class="uk-container uk-container-expand">
       <div
         class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1"
@@ -46,6 +46,13 @@ import categoriesQuery from "~/apollo/queries/category/categories";
 import ViewAll from "~/components/ViewAll";
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
+  },
   data() {
     return {
       articles: [],
@@ -72,13 +79,6 @@ export default {
       prefetch: true,
       query: categoriesQuery
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
   }
 };
 </script>

@@ -491,6 +491,13 @@ import MoreArticles from "~/components/MoreArticles";
 var moment = require("moment");
 
 export default {
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
+  },
   data() {
     return {
       projectintroduction: {},
@@ -614,13 +621,6 @@ export default {
         return { id: parseInt(this.$route.params.id) };
       }
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
   }
 };
 </script>

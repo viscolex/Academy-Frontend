@@ -1,5 +1,5 @@
 <template>
-  <div id="news-container">
+  <div id="news-container" v-if="allNews != null || undefined">
     <div class="uk-grid uk-grid-match hide-scrollbar">
       <div v-for="newspost in allNews" :key="newspost.id" style="width:100%">
         <div
@@ -33,7 +33,7 @@
             <div class="row">
               <div class="uk-clearfix">
                 <div class="uk-float-right">
-                  <span id="date" v-show="published_at">
+                  <span id="date" v-show="newspost.published_at">
                     {{ moment(newspost.published_at).format("Do MMM YYYY") }}
                   </span>
                 </div>
@@ -57,7 +57,9 @@ export default {
       moment: moment
     };
   },
-
+  methods: {
+    date() {}
+  },
   apollo: {
     txbitnewsposts: {
       prefetch: true,
