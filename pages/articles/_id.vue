@@ -1,154 +1,152 @@
 <template>
   <div>
-    <client-only>
-      <div v-show="article != null || undefined">
-        <div class="uk-container">
-          <div class="uk-card mt-3 card-background uk-box-shadow-small">
-            <div v-if="article.image_new">
-              <img
-                :src="api_url + article.image_new.url"
-                :alt="article.image_alt"
-                width
-                height
-                style="pointer-events: none;"
-                uk-img
-              />
-            </div>
-            <div class="uk-text-center uk-padding uk-padding-remove-bottom">
-              <h1 class="mb-0" style="font-weight: 700;">{{ article.title }}</h1>
-            </div>
-            <div class="uk-padding">
-              <div>
-                <div v-if="article.content" id="editor" v-html="$md.render(article.content)"></div>
-                <div class="uk-clearfix">
-                  <div class="uk-float-right">
-                    <span
-                      v-if="article.published_at"
-                      class="uk-article-meta mb-0"
-                      style="color:#ffb300"
-                    >
-                      <fa icon="calendar-alt" />
-                      {{ moment(article.published_at).format("Do MMM YYYY") }}
-                    </span>
-                  </div>
+    <div v-show="article != null || undefined">
+      <div class="uk-container">
+        <div class="uk-card mt-3 card-background uk-box-shadow-small">
+          <div v-if="article.image_new">
+            <img
+              :src="api_url + article.image_new.url"
+              :alt="article.image_alt"
+              width
+              height
+              style="pointer-events: none;"
+              uk-img
+            />
+          </div>
+          <div class="uk-text-center uk-padding uk-padding-remove-bottom">
+            <h1 class="mb-0" style="font-weight: 700;">{{ article.title }}</h1>
+          </div>
+          <div class="uk-padding">
+            <div>
+              <div v-if="article.content" id="editor" v-html="$md.render(article.content)"></div>
+              <div class="uk-clearfix">
+                <div class="uk-float-right">
+                  <span
+                    v-if="article.published_at"
+                    class="uk-article-meta mb-0"
+                    style="color:#ffb300"
+                  >
+                    <fa icon="calendar-alt" />
+                    {{ moment(article.published_at).format("Do MMM YYYY") }}
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
-            <a href="javascript:history.go(-1)">
-              <div
-                class="uk-card card-background uk-box-shadow-small article-actions"
-                id="link-hover"
-              >
-                <div class="uk-padding-small article-actions-padding">
-                  <fa icon="arrow-left" />
-                  <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
-                </div>
+        <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
+          <a href="javascript:history.go(-1)">
+            <div
+              class="uk-card card-background uk-box-shadow-small article-actions"
+              id="link-hover"
+            >
+              <div class="uk-padding-small article-actions-padding">
+                <fa icon="arrow-left" />
+                <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
               </div>
-            </a>
-            <div class="uk-grid uk-float-right" style="margin-left:auto; ">
-              <div
-                class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
-              >
-                <div class="uk-padding-small article-actions-padding">
-                  <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
-                  <fa icon="chevron-right" />
-                </div>
+            </div>
+          </a>
+          <div class="uk-grid uk-float-right" style="margin-left:auto; ">
+            <div
+              class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
+            >
+              <div class="uk-padding-small article-actions-padding">
+                <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
+                <fa icon="chevron-right" />
               </div>
-              <a
-                v-bind:href="
+            </div>
+            <a
+              v-bind:href="
               `https://twitter.com/intent/tweet?text=I've%20just%20read%20this%20article%20from%20Txbit%20Academy!%20` +
                 'https//txbit.academy/articles/' +
                 article.id
             "
-                target="_blank"
-                class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+              target="_blank"
+              class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+            >
+              <div
+                class="uk-card card-background uk-box-shadow-small article-actions"
+                id="link-hover"
               >
-                <div
-                  class="uk-card card-background uk-box-shadow-small article-actions"
-                  id="link-hover"
-                >
-                  <div class="uk-padding-small article-actions-padding category-hover">
-                    <span>
-                      <fa :icon="['fab', 'twitter']" />
-                    </span>
-                  </div>
+                <div class="uk-padding-small article-actions-padding category-hover">
+                  <span>
+                    <fa :icon="['fab', 'twitter']" />
+                  </span>
                 </div>
-              </a>
-              <a
-                v-bind:href="
+              </div>
+            </a>
+            <a
+              v-bind:href="
               `https://www.facebook.com/sharer/sharer.php?u=www.txbit.academy` +
                 '/articles/' +
                 article.id
             "
-                target="_blank"
-                class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+              target="_blank"
+              class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+            >
+              <div
+                class="uk-card card-background uk-box-shadow-small article-actions"
+                id="link-hover"
               >
-                <div
-                  class="uk-card card-background uk-box-shadow-small article-actions"
-                  id="link-hover"
-                >
-                  <div class="uk-padding-small article-actions-padding category-hover">
-                    <span>
-                      <fa :icon="['fab', 'facebook']" />
-                    </span>
-                  </div>
+                <div class="uk-padding-small article-actions-padding category-hover">
+                  <span>
+                    <fa :icon="['fab', 'facebook']" />
+                  </span>
                 </div>
-              </a>
-              <a
-                v-bind:href="
+              </div>
+            </a>
+            <a
+              v-bind:href="
               `https://www.linkedin.com/sharing/share-offsite/?url=www.txbit.academy` +
                 '/articles/' +
                 article.id
             "
-                target="_blank"
-                class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+              target="_blank"
+              class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+            >
+              <div
+                class="uk-card card-background uk-box-shadow-small article-actions"
+                id="link-hover"
               >
-                <div
-                  class="uk-card card-background uk-box-shadow-small article-actions"
-                  id="link-hover"
-                >
-                  <div class="uk-padding-small article-actions-padding category-hover">
-                    <span>
-                      <fa :icon="['fab', 'linkedin']" />
-                    </span>
-                  </div>
+                <div class="uk-padding-small article-actions-padding category-hover">
+                  <span>
+                    <fa :icon="['fab', 'linkedin']" />
+                  </span>
                 </div>
-              </a>
-              <a
-                v-bind:href="
+              </div>
+            </a>
+            <a
+              v-bind:href="
               `https://telegram.me/share/url?url=www.txbit.io` +
                 '/articles/' +
                 article.id +
                 `&text=` +
                 article.title
             "
-                target="_blank"
-                class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+              target="_blank"
+              class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
+            >
+              <div
+                class="uk-card card-background uk-box-shadow-small article-actions"
+                id="link-hover"
               >
-                <div
-                  class="uk-card card-background uk-box-shadow-small article-actions"
-                  id="link-hover"
-                >
-                  <div class="uk-padding-small article-actions-padding category-hover">
-                    <span>
-                      <fa :icon="['fab', 'telegram']" />
-                    </span>
-                  </div>
+                <div class="uk-padding-small article-actions-padding category-hover">
+                  <span>
+                    <fa :icon="['fab', 'telegram']" />
+                  </span>
                 </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div style="background-color:#272A37;" class="uk-margin-top pb-3">
-          <div class="uk-container">
-            <MoreArticles :articles="articles"></MoreArticles>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-    </client-only>
+      <div style="background-color:#272A37;" class="uk-margin-top pb-3">
+        <div class="uk-container">
+          <MoreArticles :articles="articles"></MoreArticles>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

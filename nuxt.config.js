@@ -43,6 +43,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/uikit.js', ssr: false },
+    { src: '~/plugins/spahack.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
