@@ -8,7 +8,7 @@
       <n-link
         v-for="article in allArticles"
         :key="article.id"
-        :to="`/articles/${article.slug}`"
+        :to="`/articles/${article.id}`"
         class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
       >
         <div
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     allArticles() {
-      return this.articles.reverse();
+      return this.articles.slice(0).reverse();
     }
   }
 };

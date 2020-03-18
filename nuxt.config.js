@@ -50,6 +50,7 @@ export default {
   */
   buildModules: [
     '@nuxtjs/gtm',
+    '@nuxtjs/moment',
     ['@nuxtjs/fontawesome', {
       component: 'fa',
       icons: {
@@ -70,8 +71,14 @@ export default {
 
   modules: [
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxt/http',
   ],
+
+  http: {
+    // proxyHeaders: false
+  },
+
   markdownit: {  
     preset: 'default',
     html: true,

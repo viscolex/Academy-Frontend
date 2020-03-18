@@ -1,10 +1,10 @@
 <template>
-  <div v-show="leftArticles || rightArticles != null || undefined">
+  <div>
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <nuxt-link
         v-for="article in leftArticles"
-        :key="article.id"
-        :to="{ name: 'articles-id', params: { id: article.id } }"
+        :key="article.slug"
+        :to="`/articles/${article.slug}`"
         class="uk-width-1-2@s"
       >
         <div class="uk-card uk-margin-bottom card-background uk-box-shadow-small" id="link-hover">
@@ -53,8 +53,8 @@
       <div class="uk-grid uk-grid-match uk-grid-column-small">
         <router-link
           v-for="article in rightArticles"
-          :key="article.id"
-          :to="{ name: 'articles-id', params: { id: article.id } }"
+          :key="article.slug"
+          :to="`/articles/${article.slug}`"
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
         >
           <div class="uk-card uk-margin-bottom card-background" id="link-hover">
@@ -89,18 +89,15 @@
 </template>
 
 <script>
-import articlesQuery from "~/apollo/queries/article/articles";
-var moment = require("moment");
-
 export default {
   data() {
     return {
-      moment: moment,
-      api_url: process.env.strapiBaseUri
+      api_url: process.env.strapiBaseUri,
+      articles: []
     };
   },
-  props: {
-    articles: Array
+  async fetch() {
+    this.articles = await this.$http.$get("http://localhost:1337/articles");
   },
   computed: {
     leftArticles() {

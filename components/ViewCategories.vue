@@ -1,68 +1,58 @@
 <template>
-  <div v-show="allArticles != null || undefined">
-    <div class="uk-grid uk-grid-match uk-grid-column-small">
-      <router-link
-        v-for="article in allArticles"
-        :key="article.id"
-        :to="{ name: 'articles-id', params: { id: article.id } }"
-        class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
-      >
-        <div
-          class="uk-card uk-margin-bottom card-background uk-box-shadow-small "
-          id="link-hover"
+  <div>
+    <p v-if="$fetchState.pending">Fetching...</p>
+    <div v-else>
+      <div class="uk-grid uk-grid-match uk-grid-column-small">
+        <n-link
+          v-for="article in allArticles"
+          :key="article.slug"
+          :to="`/articles/${article.slug}`"
+          class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
         >
-          <img
-            v-show="article.image_new"
-            class="uk-card-media-top"
-            :src="api_url + article.image_new.url"
-            :alt="article.image_alt"
-            style="pointer-events: none;"
-          />
-          <div class="uk-padding-small pt-2 pb-2">
-            <div class="row px-1 uk-clearfix">
-              <span
-                id="category"
-                v-show="article.category"
-                class="uk-text-uppercase uk-float-left"
-                >{{ article.category.name }}</span
-              >
-              <div class="uk-float-right">
-                <span id="date" v-show="article.published_at">{{
-                  moment(article.published_at).format("Do MMM YYYY")
-                }}</span>
+          <div class="uk-card uk-margin-bottom card-background uk-box-shadow-small" id="link-hover">
+            <img
+              :src="api_url + article.image_new.url"
+              :alt="article.image_alt"
+              class="uk-card-media-top"
+              style="pointer-events: none;"
+            />
+            <div class="uk-padding-small pt-2 pb-2">
+              <div class="row px-1 uk-clearfix">
+                <span id="category" class="uk-text-uppercase uk-float-left">
+                  {{
+                  article.category.name
+                  }}
+                </span>
+                <div class="uk-float-right">
+                  <span id="date">{{ $moment(article.published_at).format("Do MMM YYYY") }}</span>
+                </div>
               </div>
+              <div id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</div>
             </div>
-            <p
-              id="title"
-              class="uk-margin-remove-top title-articles"
-              v-show="article.title"
-            >
-              {{ article.title }}
-            </p>
           </div>
-        </div>
-      </router-link>
+        </n-link>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import articlesQuery from "~/apollo/queries/article/articles";
-var moment = require("moment");
-
 export default {
   data() {
     return {
-      moment: moment,
-      api_url: process.env.strapiBaseUri
+      api_url: process.env.strapiBaseUri,
+      articles: []
     };
   },
-  props: {
-    articles: Array
+  async fetch() {
+    this.articles = await this.$http.$get(
+      `http://localhost:1337/categories?slug=${this.$route.params.slug}`
+    );
   },
   computed: {
     allArticles() {
-      return this.articles.slice(0).reverse();
+      var removeBrackets = this.articles[0].articles;
+      return removeBrackets.reverse();
     }
   }
 };

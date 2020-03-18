@@ -1,5 +1,9 @@
 <template>
-  <div v-show="randomArticles != null || undefined">
+  <div>
+    <p v-if="$fetchState.pending">Fetching...</p>
+    <p v-else-if="$fetchState.error">
+      Error while fetching: {{ $fetchState.error.message }}
+    </p>
     <h2
       class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
     >
@@ -10,7 +14,7 @@
       <router-link
         v-for="article in randomArticles"
         :key="article.id"
-        :to="{ name: 'articles-id', params: { id: article.id } }"
+        :to="`/articles/${article.slug}`"
         class="uk-width-1-2 uk-width-1-4@s"
       >
         <div
@@ -46,7 +50,6 @@
 
 <script>
 import articlesQuery from "~/apollo/queries/article/articles";
-var moment = require("moment");
 
 function shuffle(a) {
   for (let i = a.length; i; i--) {
@@ -58,12 +61,12 @@ function shuffle(a) {
 export default {
   data() {
     return {
-      moment: moment,
-      api_url: process.env.strapiBaseUri
+      api_url: process.env.strapiBaseUri,
+      articles: []
     };
   },
-  props: {
-    articles: Array
+  async fetch() {
+    this.articles = await this.$http.$get("http://localhost:1337/articles");
   },
   computed: {
     randomArticles() {
