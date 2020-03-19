@@ -23,11 +23,11 @@
               </div>
             </div>
 
-            <LatestArticles :articles="articles"></LatestArticles>
+            <LatestArticles></LatestArticles>
             <div class="uk-hidden@s uk-text-center">
               <a
                 href="/viewall"
-                class=" uk-card view-all-button uk-box-shadow-small"
+                class="uk-card view-all-button uk-box-shadow-small"
                 id="link-hover"
               >
                 <span class="navbar-item-text">VIEW ALL ARTICLES</span>
@@ -38,13 +38,9 @@
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-            >
-              PROJECTS
-            </h2>
+            >PROJECTS</h2>
             <hr class="main-hr" />
-            <LatestProjects
-              :projectintroductions="projectintroductions"
-            ></LatestProjects>
+            <LatestProjects></LatestProjects>
             <div class="uk-hidden@s uk-text-center">
               <a
                 href="/projects"
@@ -59,9 +55,7 @@
           <div class="uk-width-1-4@l uk-width-1-2@s">
             <h2
               class="container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-            >
-              TXBIT NEWS
-            </h2>
+            >TXBIT NEWS</h2>
             <hr class="main-hr" />
             <News />
           </div>
@@ -72,25 +66,13 @@
 </template>
 
 <script>
-import articlesQuery from "~/apollo/queries/article/articles";
-import projectintroductionsQuery from "~/apollo/queries/project/projectintroductions";
 import LatestArticles from "~/components/LatestArticles";
 import LatestProjects from "~/components/LatestProjects";
 import News from "~/components/News";
 
 export default {
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-
-      setTimeout(() => this.$nuxt.$loading.finish(), 500);
-    });
-  },
   data() {
-    return {
-      articles: [],
-      projectintroductions: []
-    };
+    return {};
   },
   head() {
     return {
@@ -101,22 +83,6 @@ export default {
     LatestArticles,
     LatestProjects,
     News
-  },
-  apollo: {
-    articles: {
-      prefetch: true,
-      query: articlesQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      }
-    },
-    projectintroductions: {
-      prefetch: true,
-      query: projectintroductionsQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      }
-    }
   }
 };
 </script>

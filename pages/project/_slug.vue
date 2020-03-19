@@ -435,7 +435,7 @@
     </div>
     <div style="background-color:#272A37;" class="uk-margin-top pb-3">
       <div class="uk-container">
-        <MoreArticles :articles="articles"></MoreArticles>
+        <MoreArticles></MoreArticles>
       </div>
     </div>
   </div>

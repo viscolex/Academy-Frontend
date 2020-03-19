@@ -5,24 +5,24 @@
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <img
-          :src="api_url + article[0].image_new.url"
-          :alt="article[0].image_alt"
+          :src="api_url + article.image_new.url"
+          :alt="article.image_alt"
           width
           height
           style="pointer-events: none;"
           uk-img
         />
         <div class="uk-text-center uk-padding uk-padding-remove-bottom">
-          <h1 class="mb-0" style="font-weight: 700;">{{ article[0].title }}</h1>
+          <h1 class="mb-0" style="font-weight: 700;">{{ article.title }}</h1>
         </div>
         <div class="uk-padding">
           <div>
-            <div id="editor" v-html="$md.render(article[0].content)"></div>
+            <div id="editor" v-html="$md.render(article.content)"></div>
             <div class="uk-clearfix">
               <div class="uk-float-right">
                 <span class="uk-article-meta mb-0" style="color:#ffb300">
                   <fa icon="calendar-alt" />
-                  {{ $moment(article[0].published_at).format("Do MMM YYYY") }}
+                  {{ $moment(article.published_at).format("Do MMM YYYY") }}
                 </span>
               </div>
             </div>
@@ -52,7 +52,7 @@
             v-bind:href="
               `https://twitter.com/intent/tweet?text=I've%20just%20read%20this%20article%20from%20Txbit%20Academy!%20` +
                 'https//txbit.academy/articles/' +
-                article[0].slug
+                article.slug
             "
             target="_blank"
             class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -72,7 +72,7 @@
             v-bind:href="
               `https://www.facebook.com/sharer/sharer.php?u=www.txbit.academy` +
                 '/articles/' +
-                article[0].slug
+                article.slug
             "
             target="_blank"
             class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -92,7 +92,7 @@
             v-bind:href="
               `https://www.linkedin.com/sharing/share-offsite/?url=www.txbit.academy` +
                 '/articles/' +
-                article[0].slug
+                article.slug
             "
             target="_blank"
             class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -112,9 +112,9 @@
             v-bind:href="
               `https://telegram.me/share/url?url=www.txbit.io` +
                 '/articles/' +
-                article[0].slug +
+                article.slug +
                 `&text=` +
-                article[0].title
+                article.title
             "
             target="_blank"
             class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -135,7 +135,7 @@
     </div>
     <div style="background-color:#272A37;" class="uk-margin-top pb-3">
       <div class="uk-container">
-        <MoreArticles :articles="articles"></MoreArticles>
+        <MoreArticles></MoreArticles>
       </div>
     </div>
   </div>
@@ -148,38 +148,43 @@ export default {
   data() {
     return {
       api_url: process.env.strapiBaseUri,
-      article: [],
-      articles: []
+      articlecontent: []
     };
   },
   async fetch() {
-    this.article = await this.$http.$get(
+    this.articlecontent = await this.$http.$get(
       `http://localhost:1337/articles?slug=${this.$route.params.slug}`
     );
   },
+  computed: {
+    article: function() {
+      var removeBrackets = this.articlecontent[0];
+      return removeBrackets;
+    }
+  },
   head() {
     return {
-      title: this.article[0].title + " | " + "Txbit Academy",
+      title: this.article.title + " | " + "Txbit Academy",
       meta: [
         {
           hid: `description`,
           name: "description",
-          content: this.article[0].description
+          content: this.article.description
         },
         {
           hid: `keywords`,
           name: "keywords",
-          keywords: this.article[0].keywords
+          keywords: this.article.keywords
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.article[0].title
+          content: this.article.title
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: this.article[0].description
+          content: this.article.description
         },
         {
           hid: "og:type",
@@ -190,12 +195,12 @@ export default {
           hid: "og:url",
           property: "og:url",
           content:
-            `https://txbit.academy` + "/articles/" + this.article[0].slug + "/"
+            `https://txbit.academy` + "/articles/" + this.article.slug + "/"
         },
         {
           hid: "og:image",
           property: "og:image",
-          content: this.api_url + this.article[0].image_new.url
+          content: this.api_url + this.article.image_new.url
         },
         {
           hid: "og:image:width",
@@ -215,23 +220,23 @@ export default {
         {
           hid: "twitter:description",
           property: "twitter:description",
-          content: this.article[0].description
+          content: this.article.description
         },
         {
           hid: "twitter:title",
           property: "twitter:title",
-          content: this.article[0].title
+          content: this.article.title
         },
         {
           hid: "twitter:site",
           property: "twitter:site",
           content:
-            `https://txbit.academy` + "/articles/" + this.article[0].slug + "/"
+            `https://txbit.academy` + "/articles/" + this.article.slug + "/"
         },
         {
           hid: "twitter:image",
           property: "twitter:image",
-          content: this.api_url + this.article[0].image_new.url
+          content: this.api_url + this.article.image_new.url
         },
         {
           hid: "twitter:creator",
