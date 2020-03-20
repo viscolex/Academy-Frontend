@@ -1,9 +1,7 @@
 <template>
   <div>
     <div v-if="$fetchState.pending">Fetching...</div>
-    <p v-else-if="$fetchState.error">
-      Error while fetching: {{ $fetchState.error.message }}
-    </p>
+    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <img
@@ -32,21 +30,12 @@
         </div>
       </div>
 
-      <div
-        class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up"
-      >
+      <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
         <a href="javascript:history.go(-1)">
-          <div
-            class="uk-card card-background uk-box-shadow-small article-actions"
-            id="link-hover"
-          >
+          <div class="uk-card card-background uk-box-shadow-small article-actions" id="link-hover">
             <div class="uk-padding-small article-actions-padding">
               <fa icon="arrow-left" />
-              <span
-                class="navbar-item-text"
-                style="font-size: 1rem; font-weight:500;"
-                >GO BACK</span
-              >
+              <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
             </div>
           </div>
         </a>
@@ -55,11 +44,7 @@
             class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
           >
             <div class="uk-padding-small article-actions-padding">
-              <span
-                class="uk-text-bold"
-                style="font-size: 1rem; font-weight:500;"
-                >SHARE</span
-              >
+              <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
               <fa icon="chevron-right" />
             </div>
           </div>
@@ -76,9 +61,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <fa :icon="['fab', 'twitter']" />
                 </span>
@@ -98,9 +81,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <fa :icon="['fab', 'facebook']" />
                 </span>
@@ -120,9 +101,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <fa :icon="['fab', 'linkedin']" />
                 </span>
@@ -144,9 +123,7 @@
               class="uk-card card-background uk-box-shadow-small article-actions"
               id="link-hover"
             >
-              <div
-                class="uk-padding-small article-actions-padding category-hover"
-              >
+              <div class="uk-padding-small article-actions-padding category-hover">
                 <span>
                   <fa :icon="['fab', 'telegram']" />
                 </span>
@@ -175,7 +152,7 @@ export default {
     };
   },
   async fetch() {
-    this.articlecontent = await this.$axios.$get(
+    this.articlecontent = await this.$http.$get(
       `http://localhost:1337/articles?slug=${this.$route.params.slug}`
     );
   },
