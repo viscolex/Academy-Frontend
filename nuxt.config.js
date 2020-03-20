@@ -43,7 +43,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/uikit.js', ssr: false },
-    { src: '~/plugins/spahack.js', ssr: false },
+    // { src: '~/plugins/spahack.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -73,11 +73,16 @@ export default {
     '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@nuxt/http',
+    '@nuxtjs/axios'
   ],
 
   http: {
     // proxyHeaders: false
   },
+
+  axios: {
+    // proxyHeaders: false
+  }
 
   markdownit: {  
     preset: 'default',
