@@ -82,7 +82,7 @@ export default {
 
   axios: {
     // proxyHeaders: false
-  }
+  },
 
   markdownit: {  
     preset: 'default',
