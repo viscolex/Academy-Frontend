@@ -152,7 +152,7 @@ export default {
     };
   },
   async fetch() {
-    this.articlecontent = await this.$http.$get(
+    this.articlecontent = await this.$axios.$get(
       `http://localhost:1337/articles?slug=${this.$route.params.slug}`
     );
   },

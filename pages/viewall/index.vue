@@ -46,8 +46,10 @@ export default {
     };
   },
   async fetch() {
-    this.categories = await this.$http.$get(`http://localhost:1337/categories`);
-    this.category = await this.$http.$get(
+    this.categories = await this.$axios.$get(
+      `http://localhost:1337/categories`
+    );
+    this.category = await this.$axios.$get(
       `http://localhost:1337/categories?slug=${this.$route.params.slug}`
     );
   },

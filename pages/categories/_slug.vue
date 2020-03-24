@@ -1,18 +1,10 @@
 <template>
   <div>
-    <div v-if="$fetchState.pending">
-      Fetching...
-    </div>
-    <p v-else-if="$fetchState.error">
-      Error while fetching: {{ $fetchState.error.message }}
-    </p>
+    <div v-if="$fetchState.pending">Fetching...</div>
+    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container uk-container-expand">
-      <div
-        class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1"
-      >
-        <div
-          class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse"
-        >
+      <div class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1">
+        <div class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse">
           <nuxt-link to="/viewall">
             <div
               class="uk-card uk-margin-small-right uk-margin-small-left smaller-tabs-margins-mobile"
@@ -35,9 +27,7 @@
               class="uk-padding-small category-tabs"
               v-bind:class="{ activeitem: category.slug === activeItem }"
             >
-              <div class="uk-text-uppercase category-tabs">
-                {{ category.name }}
-              </div>
+              <div class="uk-text-uppercase category-tabs">{{ category.name }}</div>
             </div>
           </nuxt-link>
         </div>
@@ -59,8 +49,10 @@ export default {
     };
   },
   async fetch() {
-    this.categories = await this.$http.$get(`http://localhost:1337/categories`);
-    this.category = await this.$http.$get(
+    this.categories = await this.$axios.$get(
+      `http://localhost:1337/categories`
+    );
+    this.category = await this.$axios.$get(
       `http://localhost:1337/categories?slug=${this.$route.params.slug}`
     );
   },

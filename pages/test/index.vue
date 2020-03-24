@@ -55,7 +55,7 @@ export default {
     };
   },
   async fetch() {
-    this.txbitnewsposts = await this.$http.$get(
+    this.txbitnewsposts = await this.$axios.$get(
       "http://localhost:1337/txbitnewsposts"
     );
   },

@@ -78,7 +78,7 @@ export default {
     };
   },
   async fetch() {
-    this.projectintroductions = await this.$http.$get(
+    this.projectintroductions = await this.$axios.$get(
       "http://localhost:1337/projectintroductions"
     );
   },

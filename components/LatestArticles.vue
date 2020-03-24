@@ -97,7 +97,7 @@ export default {
     };
   },
   async fetch() {
-    this.articles = await this.$http.$get("http://localhost:1337/articles");
+    this.articles = await this.$axios.$get("http://localhost:1337/articles");
   },
   computed: {
     leftArticles() {

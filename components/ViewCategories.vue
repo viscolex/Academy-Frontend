@@ -45,7 +45,7 @@ export default {
     };
   },
   async fetch() {
-    this.articles = await this.$http.$get(
+    this.articles = await this.$axios.$get(
       `http://localhost:1337/categories?slug=${this.$route.params.slug}`
     );
   },

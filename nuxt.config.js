@@ -103,36 +103,29 @@ export default {
   ** Build configuration
   */
 
-  build: {
-    html: {
-      minify: {
-        collapseWhitespace: true,  // as @dario30186 mentioned
-        removeComments: true, // 👈 add this line
-      },
-    },
-  },
   generate: {
     routes: function() {
       return [
-        '/articles/1',
-        '/articles/2',
-        '/articles/3',
-        '/articles/10',
-        '/articles/11',
-        '/articles/12',
-        '/articles/13',
-        '/articles/14',
-        '/articles/15',
-        '/articles/16',
+        '/articles/what-is-cryptocurrency',
+        '/articles/the-meaning-of-hodl',
+        '/articles/what-is-dust',
+        '/articles/what-is-limit-order',
+        '/articles/what-is-proof-of-stake',
+        '/articles/what-is-proof-of-work',
+        '/articles/good-security-practices',
+        '/articles/what-is-phishing',
+        '/articles/what-is-a-keylogger',
+        '/articles/the-meaning-of-moon',
+        '/articles/hard-forks-vs-soft-forks',
         '/viewall',
         '/404',
-        'categories/1',
-        'categories/2',
-        'categories/3',
-        'categories/5',
+        'categories/exchange',
+        'categories/security',
+        'categories/blockchain',
+        'categories/terminology',
         'projects/',
-        'project/1',
-        'project/2',
+        'project/daps-coin-introduction',
+        'project/colossus-xt-introduction',
       ]
     }
   }

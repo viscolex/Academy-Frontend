@@ -1,14 +1,10 @@
 <template>
   <div>
     <p v-if="$fetchState.pending">Fetching...</p>
-    <p v-else-if="$fetchState.error">
-      Error while fetching: {{ $fetchState.error.message }}
-    </p>
+    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <h2
       class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-    >
-      MORE FROM TXBIT ACADEMY
-    </h2>
+    >MORE FROM TXBIT ACADEMY</h2>
     <hr class="main-hr" />
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <router-link
@@ -17,10 +13,7 @@
         :to="`/articles/${article.slug}`"
         class="uk-width-1-2 uk-width-1-4@s"
       >
-        <div
-          class="uk-card uk-margin-bottom card-background more-articles-hover"
-          id="link-hover"
-        >
+        <div class="uk-card uk-margin-bottom card-background more-articles-hover" id="link-hover">
           <img
             :src="api_url + article.image_new.url"
             fluid-grow
@@ -35,12 +28,9 @@
                 id="category"
                 v-show="article.category"
                 class="uk-text-uppercase uk-float-left"
-                >{{ article.category.name }}</span
-              >
+              >{{ article.category.name }}</span>
             </div>
-            <div id="title" class="uk-margin-remove-top title-articles">
-              {{ article.title }}
-            </div>
+            <div id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</div>
           </div>
         </div>
       </router-link>
@@ -66,7 +56,7 @@ export default {
     };
   },
   async fetch() {
-    this.articles = await this.$http.$get("http://localhost:1337/articles");
+    this.articles = await this.$axios.$get("http://localhost:1337/articles");
   },
   computed: {
     randomArticles() {

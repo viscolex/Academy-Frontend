@@ -1,9 +1,7 @@
 <template>
   <div>
     <div v-if="$fetchState.pending">Fetching...</div>
-    <p v-else-if="$fetchState.error">
-      Error while fetching: {{ $fetchState.error.message }}
-    </p>
+    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container">
       <div class="uk-grid uk-grid-column-small">
         <div class="uk-width-1-4@m">
@@ -18,12 +16,8 @@
                     style="width: 40%; pointer-events: none; max-height:200px; max-width:200px;"
                   />
 
-                  <div class="uk-text-lead" style="color: white;">
-                    {{ projectintroduction[0].title }}
-                  </div>
-                  <div class="uk-text-meta">
-                    ({{ projectintroduction[0].ticker }})
-                  </div>
+                  <div class="uk-text-lead" style="color: white;">{{ projectintroduction[0].title }}</div>
+                  <div class="uk-text-meta">({{ projectintroduction[0].ticker }})</div>
                 </div>
                 <div
                   class="uk-text-center pt-3 uk-width-1-2 uk-width-1-1@m"
@@ -36,8 +30,7 @@
                       v-bind:href="projectintroduction[0].website"
                       id="link-hover"
                       target="_"
-                      >Website</a
-                    >
+                    >Website</a>
                   </div>
                   <div>
                     <fa :icon="['fas', 'database']" />
@@ -46,8 +39,7 @@
                       v-bind:href="projectintroduction[0].explorer"
                       id="link-hover"
                       target="_"
-                      >Explorer</a
-                    >
+                    >Explorer</a>
                   </div>
                   <div>
                     <fa :icon="['fab', 'github']" />
@@ -56,8 +48,7 @@
                       v-bind:href="projectintroduction[0].github"
                       id="link-hover"
                       target="_"
-                      >Source Code</a
-                    >
+                    >Source Code</a>
                   </div>
                   <div>
                     <fa :icon="['fas', 'book-open']" />
@@ -66,8 +57,7 @@
                       v-bind:href="projectintroduction[0].whitepaper"
                       id="link-hover"
                       target="_"
-                      >Whitepaper</a
-                    >
+                    >Whitepaper</a>
                   </div>
                   <div>
                     <fa :icon="['fas', 'route']" />
@@ -76,8 +66,7 @@
                       v-bind:href="projectintroduction[0].roadmap"
                       id="link-hover"
                       target="_"
-                      >Roadmap</a
-                    >
+                    >Roadmap</a>
                   </div>
                   <div>
                     <fa :icon="['fas', 'user-tie']" />
@@ -86,8 +75,7 @@
                       v-bind:href="projectintroduction[0].team_members"
                       id="link-hover"
                       target="_"
-                      >Team Members</a
-                    >
+                    >Team Members</a>
                   </div>
                   <div>
                     <img
@@ -99,8 +87,7 @@
                       v-bind:href="projectintroduction[0].coinmarketcap"
                       id="link-hover"
                       target="_"
-                      >Coinmarketcap</a
-                    >
+                    >Coinmarketcap</a>
                   </div>
                   <div>
                     <img
@@ -112,8 +99,7 @@
                       v-bind:href="projectintroduction[0].coingecko"
                       id="link-hover"
                       target="_"
-                      >Coingecko</a
-                    >
+                    >Coingecko</a>
                   </div>
                 </div>
               </div>
@@ -121,9 +107,7 @@
           </div>
           <h2
             class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2"
-          >
-            DETAILS
-          </h2>
+          >DETAILS</h2>
           <hr class="main-hr" />
           <div class="uk-card card-background uk-box-shadow-small">
             <div class="uk-padding-small" style="font-size:0.95rem">
@@ -131,29 +115,23 @@
                 <span class="uk-text-bold mr-1">Genesis Date:</span>
                 <span class="muted-white-text">
                   {{
-                    $moment(projectintroduction[0].genesis).format(
-                      "Do MMM YYYY"
-                    )
+                  $moment(projectintroduction[0].genesis).format(
+                  "Do MMM YYYY"
+                  )
                   }}
                 </span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Consensus Type:</span>
-                <span class="muted-white-text">
-                  {{ projectintroduction[0].consensus_type }}
-                </span>
+                <span class="muted-white-text">{{ projectintroduction[0].consensus_type }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Algorithm:</span>
-                <span class="muted-white-text">
-                  {{ projectintroduction[0].algorithm }}
-                </span>
+                <span class="muted-white-text">{{ projectintroduction[0].algorithm }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Block Time:</span>
-                <span class="muted-white-text">
-                  {{ projectintroduction[0].block_time }}
-                </span>
+                <span class="muted-white-text">{{ projectintroduction[0].block_time }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Max Supply:</span>
@@ -166,9 +144,7 @@
           </div>
           <h2
             class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom pt-0 mt-2"
-          >
-            COMMUNITY
-          </h2>
+          >COMMUNITY</h2>
           <hr class="main-hr" />
           <div class="uk-card card-background uk-box-shadow-small">
             <div class="py-2 px-1">
@@ -188,10 +164,7 @@
                     v-bind:href="projectintroduction[0].telegram"
                     target="_"
                   >
-                    <fa
-                      :icon="['fab', 'telegram-plane']"
-                      style="font-size:1.2rem;"
-                    />
+                    <fa :icon="['fab', 'telegram-plane']" style="font-size:1.2rem;" />
                   </a>
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
@@ -207,10 +180,7 @@
                     v-bind:href="projectintroduction[0].reddit"
                     target="_"
                   >
-                    <fa
-                      :icon="['fab', 'reddit-alien']"
-                      style="font-size:1.2rem;"
-                    />
+                    <fa :icon="['fab', 'reddit-alien']" style="font-size:1.2rem;" />
                   </a>
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
@@ -218,10 +188,7 @@
                     v-bind:href="projectintroduction[0].facebook"
                     target="_"
                   >
-                    <fa
-                      :icon="['fab', 'facebook-f']"
-                      style="font-size:1.2rem;"
-                    />
+                    <fa :icon="['fab', 'facebook-f']" style="font-size:1.2rem;" />
                   </a>
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
@@ -290,9 +257,10 @@
         <div class="uk-width-3-4@m">
           <div class="uk-card mt-3 card-background uk-box-shadow-small fast">
             <div class="uk-padding uk-padding-remove-bottom">
-              <h1 class="uk-text-center mb-0" style="font-weight: 700;">
-                {{ projectintroduction[0].title }} Introduction
-              </h1>
+              <h1
+                class="uk-text-center mb-0"
+                style="font-weight: 700;"
+              >{{ projectintroduction[0].title }} Introduction</h1>
             </div>
             <div class="uk-padding pt-4">
               <div
@@ -328,17 +296,14 @@
                   >
                     <fa :icon="['fas', 'calendar-alt']" />
                     {{
-                      $moment(projectintroduction.published_at).format(
-                        "Do MMM YYYY"
-                      )
+                    $moment(projectintroduction.published_at).format(
+                    "Do MMM YYYY"
+                    )
                     }}
                   </span>
                 </div>
               </div>
-              <div
-                class="uk-text-meta uk-text-center pt-4"
-                style="font-size:0.7rem;"
-              >
+              <div class="uk-text-meta uk-text-center pt-4" style="font-size:0.7rem;">
                 <span>
                   This publication does not offer investment advice and nothing
                   in here be construed as investment advice. Our publications
@@ -349,9 +314,7 @@
             </div>
           </div>
 
-          <div
-            class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up"
-          >
+          <div class="uk-grid uk-padding-small uk-padding-remove-right uk-padding-remove-left Up">
             <a href="javascript:history.go(-1)">
               <div
                 class="uk-card card-background uk-box-shadow-small article-actions"
@@ -359,11 +322,7 @@
               >
                 <div class="uk-padding-small article-actions-padding">
                   <fa :icon="['fas', 'arrow-left']" />
-                  <span
-                    class="navbar-item-text"
-                    style="font-size: 1rem; font-weight:500;"
-                    >GO BACK</span
-                  >
+                  <span class="navbar-item-text" style="font-size: 1rem; font-weight:500;">GO BACK</span>
                 </div>
               </div>
             </a>
@@ -372,11 +331,7 @@
                 class="uk-card card-background uk-box-shadow-small article-actions pl-0 uk-visible@m"
               >
                 <div class="uk-padding-small article-actions-padding">
-                  <span
-                    class="uk-text-bold"
-                    style="font-size: 1rem; font-weight:500;"
-                    >SHARE</span
-                  >
+                  <span class="uk-text-bold" style="font-size: 1rem; font-weight:500;">SHARE</span>
 
                   <fa :icon="['fas', 'chevron-right']" />
                 </div>
@@ -394,9 +349,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div
-                    class="uk-padding-small article-actions-padding category-hover"
-                  >
+                  <div class="uk-padding-small article-actions-padding category-hover">
                     <span>
                       <fa :icon="['fab', 'twitter']" />
                     </span>
@@ -416,9 +369,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div
-                    class="uk-padding-small article-actions-padding category-hover"
-                  >
+                  <div class="uk-padding-small article-actions-padding category-hover">
                     <span>
                       <fa :icon="['fab', 'facebook']" />
                     </span>
@@ -438,9 +389,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div
-                    class="uk-padding-small article-actions-padding category-hover"
-                  >
+                  <div class="uk-padding-small article-actions-padding category-hover">
                     <span>
                       <fa :icon="['fab', 'linkedin']" />
                     </span>
@@ -462,9 +411,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div
-                    class="uk-padding-small article-actions-padding category-hover"
-                  >
+                  <div class="uk-padding-small article-actions-padding category-hover">
                     <span>
                       <fa :icon="['fab', 'telegram']" />
                     </span>
@@ -496,7 +443,7 @@ export default {
     };
   },
   async fetch() {
-    this.projectintroduction = await this.$http.$get(
+    this.projectintroduction = await this.$axios.$get(
       `http://localhost:1337/projectintroductions?slug=${this.$route.params.slug}`
     );
   },
