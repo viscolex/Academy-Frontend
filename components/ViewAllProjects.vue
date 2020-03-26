@@ -1,11 +1,10 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching...</p>
-    <div v-else>
+    <div>
       <div class="uk-grid uk-grid-match uk-grid-column-small">
         <router-link
-          v-for="projectintroduction in projectIntroductions"
-          :key="projectintroduction.id"
+          v-for="projectintroduction in this.$store.state.projects.projects"
+          :key="projectintroduction.slug"
           :to="`/project/${projectintroduction.slug}`"
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@l"
         >
@@ -20,11 +19,7 @@
               >{{ projectintroduction.title }}</div>
               <div class="uk-grid">
                 <div class="uk-width-3-4">
-                  <span id="content">
-                    {{
-                    projectintroduction.short_description
-                    }}
-                  </span>
+                  <span id="content">{{ projectintroduction.short_description }}</span>
                 </div>
                 <div class="uk-width-1-4 pl-0 p-2 pb-1">
                   <img
@@ -68,24 +63,11 @@
 </template>
 
 <script>
-import projectintroductionsQuery from "~/apollo/queries/project/projectintroductions";
-
 export default {
   data() {
     return {
-      projectintroductions: [],
       api_url: process.env.strapiBaseUri
     };
-  },
-  async fetch() {
-    this.projectintroductions = await this.$axios.$get(
-      "http://localhost:1337/projectintroductions"
-    );
-  },
-  computed: {
-    projectIntroductions() {
-      return this.projectintroductions.reverse();
-    }
   }
 };
 </script>

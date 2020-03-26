@@ -1,12 +1,12 @@
 <template>
-  <div id="news-container" v-show="txbitnewsposts != null || undefined">
+  <div id="news-container">
     <div class="uk-grid uk-grid-match hide-scrollbar">
-      <div v-for="newspost in txbitNewsPosts" :key="newspost.slug" style="width:100%">
+      <div v-for="newspost in this.$store.state.news.news" :key="newspost.slug" style="width:100%">
         <div class="uk-card uk-margin-bottom container-fluid card-background uk-box-shadow-small">
           <div class="p-2">
             <div class="row">
               <div
-                v-show="newspost.url"
+                v-show="newspost.title"
                 id="title-news"
                 class="title-bottom-border"
                 style="width:100%;"
@@ -45,21 +45,5 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      txbitnewsposts: []
-    };
-  },
-  async fetch() {
-    this.txbitnewsposts = await this.$axios.$get(
-      "http://localhost:1337/txbitnewsposts"
-    );
-  },
-  computed: {
-    txbitNewsPosts() {
-      return this.txbitnewsposts.reverse().slice(0, 10);
-    }
-  }
-};
+export default {};
 </script>

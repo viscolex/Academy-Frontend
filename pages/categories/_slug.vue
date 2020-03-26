@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div v-if="$fetchState.pending">Fetching...</div>
-    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container uk-container-expand">
       <div class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1">
         <div class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse">
@@ -16,7 +14,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            v-for="category in categories"
+            v-for="category in this.$store.state.categories.categories"
             v-bind:key="category.slug"
             :to="`/categories/${category.slug}`"
             tag="a"
@@ -32,33 +30,45 @@
           </nuxt-link>
         </div>
       </div>
-      <ViewCategories :articles="category[0].articles || []"></ViewCategories>
+      <ViewCategories></ViewCategories>
     </div>
   </div>
 </template>
 
 <script>
 import ViewCategories from "~/components/ViewCategories";
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
-      category: [],
-      categories: [],
-      activeItem: this.$route.params.slug
+      activeItem: this.$route.params.slug,
+      currentCategorySlug: ""
     };
   },
-  async fetch() {
-    this.categories = await this.$axios.$get(
-      `http://localhost:1337/categories`
-    );
-    this.category = await this.$axios.$get(
-      `http://localhost:1337/categories?slug=${this.$route.params.slug}`
-    );
+  created() {
+    this.currentCategorySlug = this.$route.params.slug;
+  },
+
+  computed: {
+    ...mapState(["categories"]),
+
+    category() {
+      let result = this.categories.categories.find(
+        el => el.slug === this.currentCategorySlug
+      ).articles;
+      if (!this.$route.params.slug) {
+        return this.categories.categories.find(
+          el => el.slug === this.currentCategorySlug
+        );
+      } else {
+        return result;
+      }
+    }
   },
   head() {
     return {
-      title: this.category[0].name + " " + "Articles" + " | " + "Txbit Academy"
+      title: "All Articles" + " | " + "Txbit Academy"
     };
   },
   components: {

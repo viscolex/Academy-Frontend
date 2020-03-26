@@ -1,10 +1,8 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching...</p>
-    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <n-link
-        v-for="article in allArticles"
+        v-for="article in this.$store.state.articles.articles"
         :key="article.id"
         :to="`/articles/${article.slug}`"
         class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
@@ -39,17 +37,8 @@
 export default {
   data() {
     return {
-      api_url: process.env.strapiBaseUri,
-      articles: []
+      api_url: process.env.strapiBaseUri
     };
-  },
-  async fetch() {
-    this.articles = await this.$axios.$get("http://localhost:1337/articles");
-  },
-  computed: {
-    allArticles() {
-      return this.articles.reverse();
-    }
   }
 };
 </script>

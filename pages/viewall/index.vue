@@ -1,7 +1,5 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching...</p>
-    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container uk-container-expand">
       <div class="uk-padding-small uk-padding-remove-right uk-padding-remove-left pt-1">
         <div class="uk-grid uk-flex-center uk-grid-match uk-grid-column-collapse">
@@ -15,7 +13,7 @@
             </div>
           </nuxt-link>
           <nuxt-link
-            v-for="category in categories"
+            v-for="category in this.$store.state.categories.categories"
             :key="category.slug"
             :to="`/categories/${category.slug}`"
             tag="a"
@@ -38,20 +36,11 @@
 
 <script>
 import ViewAll from "~/components/ViewAll";
+import { mapState } from "vuex";
 
 export default {
   data() {
-    return {
-      categories: []
-    };
-  },
-  async fetch() {
-    this.categories = await this.$axios.$get(
-      `http://localhost:1337/categories`
-    );
-    this.category = await this.$axios.$get(
-      `http://localhost:1337/categories?slug=${this.$route.params.slug}`
-    );
+    return {};
   },
   head() {
     return {

@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@nuxt/http": "^0.3.9",
-    "@nuxtjs/apollo": "^4.0.0-rc19",
     "@nuxtjs/axios": "^5.9.5",
     "@nuxtjs/gtm": "^2.2.2",
     "@nuxtjs/markdownit": "^1.2.7",

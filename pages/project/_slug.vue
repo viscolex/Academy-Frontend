@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div v-if="$fetchState.pending">Fetching...</div>
-    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container">
       <div class="uk-grid uk-grid-column-small">
         <div class="uk-width-1-4@m">
@@ -10,14 +8,14 @@
               <div class="uk-grid">
                 <div class="uk-text-center uk-width-1-2 uk-width-1-1@m">
                   <img
-                    :src="api_url + projectintroduction[0].image_new.url"
+                    :src="api_url + projectintroduction.image_new.url"
                     fluid-grow
                     alt="Fluid-grow image"
                     style="width: 40%; pointer-events: none; max-height:200px; max-width:200px;"
                   />
 
-                  <div class="uk-text-lead" style="color: white;">{{ projectintroduction[0].title }}</div>
-                  <div class="uk-text-meta">({{ projectintroduction[0].ticker }})</div>
+                  <div class="uk-text-lead" style="color: white;">{{ projectintroduction.title }}</div>
+                  <div class="uk-text-meta">({{ projectintroduction.ticker }})</div>
                 </div>
                 <div
                   class="uk-text-center pt-3 uk-width-1-2 uk-width-1-1@m"
@@ -27,7 +25,7 @@
                     <fa :icon="['fas', 'globe']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].website"
+                      v-bind:href="projectintroduction.website"
                       id="link-hover"
                       target="_"
                     >Website</a>
@@ -36,7 +34,7 @@
                     <fa :icon="['fas', 'database']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].explorer"
+                      v-bind:href="projectintroduction.explorer"
                       id="link-hover"
                       target="_"
                     >Explorer</a>
@@ -45,7 +43,7 @@
                     <fa :icon="['fab', 'github']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].github"
+                      v-bind:href="projectintroduction.github"
                       id="link-hover"
                       target="_"
                     >Source Code</a>
@@ -54,7 +52,7 @@
                     <fa :icon="['fas', 'book-open']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].whitepaper"
+                      v-bind:href="projectintroduction.whitepaper"
                       id="link-hover"
                       target="_"
                     >Whitepaper</a>
@@ -63,7 +61,7 @@
                     <fa :icon="['fas', 'route']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].roadmap"
+                      v-bind:href="projectintroduction.roadmap"
                       id="link-hover"
                       target="_"
                     >Roadmap</a>
@@ -72,7 +70,7 @@
                     <fa :icon="['fas', 'user-tie']" />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].team_members"
+                      v-bind:href="projectintroduction.team_members"
                       id="link-hover"
                       target="_"
                     >Team Members</a>
@@ -84,7 +82,7 @@
                     />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].coinmarketcap"
+                      v-bind:href="projectintroduction.coinmarketcap"
                       id="link-hover"
                       target="_"
                     >Coinmarketcap</a>
@@ -96,7 +94,7 @@
                     />
                     <a
                       class="uk-button-text mx-0"
-                      v-bind:href="projectintroduction[0].coingecko"
+                      v-bind:href="projectintroduction.coingecko"
                       id="link-hover"
                       target="_"
                     >Coingecko</a>
@@ -115,7 +113,7 @@
                 <span class="uk-text-bold mr-1">Genesis Date:</span>
                 <span class="muted-white-text">
                   {{
-                  $moment(projectintroduction[0].genesis).format(
+                  $moment(projectintroduction.genesis).format(
                   "Do MMM YYYY"
                   )
                   }}
@@ -123,21 +121,21 @@
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Consensus Type:</span>
-                <span class="muted-white-text">{{ projectintroduction[0].consensus_type }}</span>
+                <span class="muted-white-text">{{ projectintroduction.consensus_type }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Algorithm:</span>
-                <span class="muted-white-text">{{ projectintroduction[0].algorithm }}</span>
+                <span class="muted-white-text">{{ projectintroduction.algorithm }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Block Time:</span>
-                <span class="muted-white-text">{{ projectintroduction[0].block_time }}</span>
+                <span class="muted-white-text">{{ projectintroduction.block_time }}</span>
               </div>
               <div>
                 <span class="uk-text-bold mr-1">Max Supply:</span>
                 <span class="muted-white-text">
-                  {{ projectintroduction[0].max_supply }}
-                  {{ projectintroduction[0].ticker }}
+                  {{ projectintroduction.max_supply }}
+                  {{ projectintroduction.ticker }}
                 </span>
               </div>
             </div>
@@ -153,7 +151,7 @@
                   <a
                     class="uk-button uk-button-default uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].twitter"
+                    v-bind:href="projectintroduction.twitter"
                     target="_"
                   >
                     <fa :icon="['fab', 'twitter']" style="font-size:1.2rem;" />
@@ -161,7 +159,7 @@
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].telegram"
+                    v-bind:href="projectintroduction.telegram"
                     target="_"
                   >
                     <fa :icon="['fab', 'telegram-plane']" style="font-size:1.2rem;" />
@@ -169,7 +167,7 @@
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].discord"
+                    v-bind:href="projectintroduction.discord"
                     target="_"
                   >
                     <fa :icon="['fab', 'discord']" style="font-size:1.2rem;" />
@@ -177,7 +175,7 @@
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].reddit"
+                    v-bind:href="projectintroduction.reddit"
                     target="_"
                   >
                     <fa :icon="['fab', 'reddit-alien']" style="font-size:1.2rem;" />
@@ -185,7 +183,7 @@
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].facebook"
+                    v-bind:href="projectintroduction.facebook"
                     target="_"
                   >
                     <fa :icon="['fab', 'facebook-f']" style="font-size:1.2rem;" />
@@ -193,7 +191,7 @@
                   <a
                     class="uk-button uk-button-default px-1 uk-button-text"
                     id="link-hover"
-                    v-bind:href="projectintroduction[0].medium"
+                    v-bind:href="projectintroduction.medium"
                     target="_"
                   >
                     <fa :icon="['fab', 'medium-m']" style="font-size:1.2rem;" />
@@ -218,39 +216,39 @@
               id="link-hover"
               v-bind:href="
                 'https://txbit.io/Trade/' +
-                  projectintroduction[0].ticker +
+                  projectintroduction.ticker +
                   '/BTC' +
                   '/?r=3f1'
               "
               target="_"
             >
-              <span class="p-1">{{ projectintroduction[0].ticker }} / BTC</span>
+              <span class="p-1">{{ projectintroduction.ticker }} / BTC</span>
             </a>
             <a
               class="uk-button mb-2 uk-button-primary uk-box-shadow-small p-0 px-0 uk-width-1-3 uk-width-1-1@m uk-width-1-3@l"
               id="link-hover"
               v-bind:href="
                 'https://txbit.io/Trade/' +
-                  projectintroduction[0].ticker +
+                  projectintroduction.ticker +
                   '/ETH' +
                   '/?r=3f1'
               "
               target="_"
             >
-              <span class="p-1">{{ projectintroduction[0].ticker }} / ETH</span>
+              <span class="p-1">{{ projectintroduction.ticker }} / ETH</span>
             </a>
             <a
               class="uk-button mb-2 uk-button-primary uk-box-shadow-small p-0 px-0 uk-width-1-3 uk-width-1-1@m uk-width-1-3@l"
               id="link-hover"
               v-bind:href="
                 'https://txbit.io/Trade/' +
-                  projectintroduction[0].ticker +
+                  projectintroduction.ticker +
                   '/XLR' +
                   '/?r=3f1'
               "
               target="_"
             >
-              <span class="p-1">{{ projectintroduction[0].ticker }} / XLR</span>
+              <span class="p-1">{{ projectintroduction.ticker }} / XLR</span>
             </a>
           </div>
         </div>
@@ -260,13 +258,13 @@
               <h1
                 class="uk-text-center mb-0"
                 style="font-weight: 700;"
-              >{{ projectintroduction[0].title }} Introduction</h1>
+              >{{ projectintroduction.title }} Introduction</h1>
             </div>
             <div class="uk-padding pt-4">
               <div
-                v-if="projectintroduction[0].content"
+                v-if="projectintroduction.content"
                 id="editor"
-                v-html="$md.render(projectintroduction[0].content)"
+                v-html="$md.render(projectintroduction.content)"
               ></div>
               <div>
                 <h2 class="mb-4" style="font-weight: 700;">Live Market Data</h2>
@@ -276,7 +274,7 @@
                 ></script>
                 <div
                   class="coinmarketcap-currency-widget"
-                  v-bind:data-currencyid="projectintroduction[0].cmc_widget"
+                  v-bind:data-currencyid="projectintroduction.cmc_widget"
                   data-base="USD"
                   data-secondary="BTC"
                   data-ticker="true"
@@ -290,7 +288,7 @@
               <div class="uk-clearfix">
                 <div class="uk-float-right">
                   <span
-                    v-if="projectintroduction[0].published_at"
+                    v-if="projectintroduction.published_at"
                     class="uk-article-meta mb-0"
                     style="color:#ffb300"
                   >
@@ -340,7 +338,7 @@
                 v-bind:href="
                   `https://twitter.com/intent/tweet?text=I've%20just%20read%20this%20article%20from%20Txbit%20Academy!%20` +
                     'https//txbit.academy/projects/' +
-                    projectintroduction[0].slug
+                    projectintroduction.slug
                 "
                 target="_blank"
                 class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -360,7 +358,7 @@
                 v-bind:href="
                   `https://www.facebook.com/sharer/sharer.php?u=www.txbit.academy` +
                     '/projects/' +
-                    projectintroduction[0].slug
+                    projectintroduction.slug
                 "
                 target="_blank"
                 class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -380,7 +378,7 @@
                 v-bind:href="
                   `https://www.linkedin.com/sharing/share-offsite/?url=www.txbit.academy` +
                     '/projects/' +
-                    projectintroduction[0].slug
+                    projectintroduction.slug
                 "
                 target="_blank"
                 class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -400,9 +398,9 @@
                 v-bind:href="
                   `https://telegram.me/share/url?url=www.txbit.io` +
                     '/projects/' +
-                    projectintroduction[0].slug +
+                    projectintroduction.slug +
                     `&text=` +
-                    projectintroduction[0].slug
+                    projectintroduction.slug
                 "
                 target="_blank"
                 class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-right pl-2"
@@ -433,24 +431,40 @@
 
 <script>
 import MoreArticles from "~/components/MoreArticles";
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
-      projectintroduction: [],
       projectdata: null,
-      api_url: process.env.strapiBaseUri
+      api_url: process.env.strapiBaseUri,
+      currentProjectSlug: ""
     };
   },
-  async fetch() {
-    this.projectintroduction = await this.$axios.$get(
-      `http://localhost:1337/projectintroductions?slug=${this.$route.params.slug}`
-    );
+  created() {
+    this.currentProjectSlug = this.$route.params.slug;
+  },
+
+  computed: {
+    ...mapState(["projects"]),
+
+    projectintroduction() {
+      let result = this.projects.projects.find(
+        el => el.slug === this.currentProjectSlug
+      );
+      if (!this.$route.params.slug) {
+        return this.projects.projects.find(
+          el => el.slug === this.currentProjectSlug
+        );
+      } else {
+        return result;
+      }
+    }
   },
   head() {
     return {
       title:
-        this.projectintroduction[0].title +
+        this.projectintroduction.title +
         " " +
         "Introduction" +
         " | " +
@@ -459,22 +473,22 @@ export default {
         {
           hid: `description`,
           name: "description",
-          content: this.projectintroduction[0].description
+          content: this.projectintroduction.description
         },
         {
           hid: `keywords`,
           name: "keywords",
-          keywords: this.projectintroduction[0].keywords
+          keywords: this.projectintroduction.keywords
         },
         {
           hid: "og:title",
           property: "og:title",
-          content: this.projectintroduction[0].title + " Introduction"
+          content: this.projectintroduction.title + " Introduction"
         },
         {
           hid: "og:description",
           property: "og:description",
-          content: this.projectintroduction[0].description
+          content: this.projectintroduction.description
         },
         {
           hid: "og:type",
@@ -487,13 +501,13 @@ export default {
           content:
             `https://txbit.academy` +
             "/project/" +
-            this.projectintroduction[0].slug +
+            this.projectintroduction.slug +
             "/"
         },
         {
           hid: "og:image",
           property: "og:image",
-          content: this.api_url + this.projectintroduction[0].image_new.url
+          content: this.api_url + this.projectintroduction.image_new.url
         },
         {
           hid: "og:image:width",
@@ -513,12 +527,12 @@ export default {
         {
           hid: "twitter:description",
           property: "twitter:description",
-          content: this.projectintroduction[0].description
+          content: this.projectintroduction.description
         },
         {
           hid: "twitter:title",
           property: "twitter:title",
-          content: this.projectintroduction[0].title
+          content: this.projectintroduction.title
         },
         {
           hid: "twitter:site",
@@ -526,13 +540,13 @@ export default {
           content:
             `https://txbit.academy` +
             "/project/" +
-            this.projectintroduction[0].slug +
+            this.projectintroduction.slug +
             "/"
         },
         {
           hid: "twitter:image",
           property: "twitter:image",
-          content: this.api_url + this.projectintroduction[0].image_new.url
+          content: this.api_url + this.projectintroduction.image_new.url
         },
         {
           hid: "twitter:creator",

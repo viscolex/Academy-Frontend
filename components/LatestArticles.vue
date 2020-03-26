@@ -2,7 +2,7 @@
   <div>
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <nuxt-link
-        v-for="article in leftArticles"
+        v-for="article in this.$store.state.articles.articlesTopTwo"
         :key="article.slug"
         :to="`/articles/${article.slug}`"
         class="uk-width-1-2@s"
@@ -52,7 +52,7 @@
     <div class="uk-margin-remove-top uk-visible@m">
       <div class="uk-grid uk-grid-match uk-grid-column-small">
         <router-link
-          v-for="article in rightArticles"
+          v-for="article in this.$store.state.articles.articlesRemaining"
           :key="article.slug"
           :to="`/articles/${article.slug}`"
           class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
@@ -92,20 +92,8 @@
 export default {
   data() {
     return {
-      api_url: process.env.strapiBaseUri,
-      articles: []
+      api_url: process.env.strapiBaseUri
     };
-  },
-  async fetch() {
-    this.articles = await this.$axios.$get("http://localhost:1337/articles");
-  },
-  computed: {
-    leftArticles() {
-      return this.articles.slice(-2).reverse();
-    },
-    rightArticles() {
-      return this.articles.slice(-10, -2).reverse();
-    }
   }
 };
 </script>

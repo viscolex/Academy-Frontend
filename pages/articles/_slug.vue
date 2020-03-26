@@ -1,7 +1,5 @@
 <template>
   <div>
-    <div v-if="$fetchState.pending">Fetching...</div>
-    <p v-else-if="$fetchState.error">Error while fetching: {{ $fetchState.error.message }}</p>
     <div class="uk-container">
       <div class="uk-card mt-3 card-background uk-box-shadow-small">
         <img
@@ -143,23 +141,34 @@
 
 <script>
 import MoreArticles from "~/components/MoreArticles";
+import { mapState } from "vuex";
 
 export default {
   data() {
     return {
       api_url: process.env.strapiBaseUri,
-      articlecontent: []
+      currentArticleSlug: ""
     };
   },
-  async fetch() {
-    this.articlecontent = await this.$axios.$get(
-      `http://localhost:1337/articles?slug=${this.$route.params.slug}`
-    );
+
+  created() {
+    this.currentArticleSlug = this.$route.params.slug;
   },
+
   computed: {
-    article: function() {
-      var removeBrackets = this.articlecontent[0];
-      return removeBrackets;
+    ...mapState(["articles"]),
+
+    article() {
+      let result = this.articles.articles.find(
+        el => el.slug === this.currentArticleSlug
+      );
+      if (!this.$route.params.slug) {
+        return this.articles.articles.find(
+          el => el.slug === this.currentArticleSlug
+        );
+      } else {
+        return result;
+      }
     }
   },
   head() {

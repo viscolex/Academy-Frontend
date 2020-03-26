@@ -43,7 +43,7 @@ export default {
   */
   plugins: [
     { src: '~/plugins/uikit.js', ssr: false },
-    { src: '~/plugins/spahack.js', ssr: false },
+    // { src: '~/plugins/spahack.js', ssr: false },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -70,7 +70,6 @@ export default {
   */
 
   modules: [
-    '@nuxtjs/apollo',
     '@nuxtjs/markdownit',
     '@nuxt/http',
     '@nuxtjs/axios'
@@ -90,14 +89,6 @@ export default {
     linkify: true,
     breaks: true,
     injected: true
-  },
-
-  apollo: {
-    clientConfigs: {
-      default: {
-        httpEndpoint: process.env.BACKEND_URL || "http://localhost:1337/graphql"
-      },
-    }
   },
   /*
   ** Build configuration

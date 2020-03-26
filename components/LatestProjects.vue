@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link
-      v-for="projectintroduction in projectIntroductions"
+      v-for="projectintroduction in this.$store.state.projects.projectsLatest"
       :key="projectintroduction.slug"
       :to="`/project/${projectintroduction.slug}`"
       class="uk-width-1-2@s"
@@ -64,19 +64,8 @@
 export default {
   data() {
     return {
-      projectintroductions: [],
       api_url: process.env.strapiBaseUri
     };
-  },
-  async fetch() {
-    this.projectintroductions = await this.$axios.$get(
-      "http://localhost:1337/projectintroductions"
-    );
-  },
-  computed: {
-    projectIntroductions() {
-      return this.projectintroductions.reverse();
-    }
   }
 };
 </script>
