@@ -32,7 +32,7 @@ export default {
   /*
   ** Global CSS
   */
-
+ 
   css: [
     'uikit/dist/css/uikit.min.css',
     'uikit/dist/css/uikit.css',
