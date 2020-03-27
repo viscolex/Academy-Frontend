@@ -2,21 +2,16 @@
   <div>
     <h2
       class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
-    >
-      MORE FROM TXBIT ACADEMY
-    </h2>
+    >MORE FROM TXBIT ACADEMY</h2>
     <hr class="main-hr" />
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <router-link
         v-for="article in randomArticles"
-        :key="article.id"
+        :key="article.slug"
         :to="`/articles/${article.slug}`"
         class="uk-width-1-2 uk-width-1-4@s"
       >
-        <div
-          class="uk-card uk-margin-bottom card-background more-articles-hover"
-          id="link-hover"
-        >
+        <div class="uk-card uk-margin-bottom card-background more-articles-hover" id="link-hover">
           <img
             :src="api_url + article.image_new.url"
             fluid-grow
@@ -31,12 +26,9 @@
                 id="category"
                 v-show="article.category"
                 class="uk-text-uppercase uk-float-left"
-                >{{ article.category.name }}</span
-              >
+              >{{ article.category.name }}</span>
             </div>
-            <div id="title" class="uk-margin-remove-top title-articles">
-              {{ article.title }}
-            </div>
+            <div id="title" class="uk-margin-remove-top title-articles">{{ article.title }}</div>
           </div>
         </div>
       </router-link>

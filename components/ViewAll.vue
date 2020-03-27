@@ -3,7 +3,7 @@
     <div class="uk-grid uk-grid-match uk-grid-column-small">
       <n-link
         v-for="article in this.$store.state.articles.articles"
-        :key="article.id"
+        :key="article.slug"
         :to="`/articles/${article.slug}`"
         class="uk-width-1 uk-width-1-2@s uk-width-1-4@m"
       >
