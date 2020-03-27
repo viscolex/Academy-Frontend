@@ -268,22 +268,20 @@
               ></div>
               <div>
                 <h2 class="mb-4" style="font-weight: 700;">Live Market Data</h2>
-                <script
-                  type="text/javascript"
-                  src="https://files.coinmarketcap.com/static/widget/currency.js"
-                ></script>
-                <div
-                  class="coinmarketcap-currency-widget"
-                  v-bind:data-currencyid="projectintroduction.cmc_widget"
-                  data-base="USD"
-                  data-secondary="BTC"
-                  data-ticker="true"
-                  data-rank="true"
-                  data-marketcap="true"
-                  data-volume="true"
-                  data-statsticker="true"
-                  data-stats="USD"
-                ></div>
+                <div ref="cmcwidget">
+                  <div
+                    class="coinmarketcap-currency-widget"
+                    v-bind:data-currencyid="projectintroduction.cmc_widget"
+                    data-base="USD"
+                    data-secondary="BTC"
+                    data-ticker="true"
+                    data-rank="true"
+                    data-marketcap="true"
+                    data-volume="true"
+                    data-statsticker="true"
+                    data-stats="USD"
+                  ></div>
+                </div>
               </div>
               <div class="uk-clearfix">
                 <div class="uk-float-right">
@@ -441,10 +439,18 @@ export default {
       currentProjectSlug: ""
     };
   },
+  mounted() {
+    let foo = document.createElement("script");
+    foo.setAttribute(
+      "src",
+      "https://files.coinmarketcap.com/static/widget/currency.js"
+    );
+    this.$refs.cmcwidget.appendChild(foo);
+  },
+
   created() {
     this.currentProjectSlug = this.$route.params.slug;
   },
-
   computed: {
     ...mapState(["projects"]),
 
