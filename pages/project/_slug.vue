@@ -57,7 +57,7 @@
                       target="_"
                     >Whitepaper</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.roadmap">
                     <fa :icon="['fas', 'route']" />
                     <a
                       class="uk-button-text mx-0"
@@ -131,7 +131,7 @@
                 <span class="uk-text-bold mr-1">Block Time:</span>
                 <span class="muted-white-text">{{ projectintroduction.block_time }}</span>
               </div>
-              <div>
+              <div v-if="projectintroduction.max_supply">
                 <span class="uk-text-bold mr-1">Max Supply:</span>
                 <span class="muted-white-text">
                   {{ projectintroduction.max_supply }}
