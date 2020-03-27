@@ -1,9 +1,5 @@
 <template>
   <div>
-    <p v-if="$fetchState.pending">Fetching...</p>
-    <p v-else-if="$fetchState.error">
-      Error while fetching: {{ $fetchState.error.message }}
-    </p>
     <h2
       class="project-container-title uk-padding-small uk-padding-remove-right uk-padding-remove-left uk-padding-remove-bottom"
     >
@@ -49,6 +45,8 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 function shuffle(a) {
   for (let i = a.length; i; i--) {
     let j = Math.floor(Math.random() * i);
@@ -59,17 +57,15 @@ function shuffle(a) {
 export default {
   data() {
     return {
-      api_url: process.env.strapiBaseUri,
-      articles: []
+      api_url: process.env.strapiBaseUri
     };
   },
-  async fetch() {
-    this.articles = await this.$axios.$get("http://localhost:1337/articles");
-  },
   computed: {
+    ...mapState(["articles"]),
     randomArticles() {
-      shuffle(this.articles);
-      return this.articles.slice(0, 4);
+      let articles = this.articles.articles;
+      shuffle(articles);
+      return articles.slice(0, 4);
     }
   }
 };
