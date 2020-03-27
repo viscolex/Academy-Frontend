@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheNavbar />
-    <nuxt keep-alive style="min-height: 96vh;" />
+    <nuxt style="min-height: 96vh;" />
     <TheFooter />
   </div>
 </template>

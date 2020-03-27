@@ -57,7 +57,7 @@
       </div>
     </nav>
     <div
-      class="uk-hidden@s uk-modal-full"
+      class="uk-hidden@s uk-modal-full uk-modal"
       id="modal-full"
       uk-modal
       style="padding-top:46px;"
