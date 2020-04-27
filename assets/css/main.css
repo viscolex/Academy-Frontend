@@ -1129,7 +1129,7 @@ button:disabled {
   padding-bottom: 5px;
 }
 
-.day-mode .title-bottom-border {
+.light-mode .title-bottom-border {
   border-bottom: solid 1px #e5e5e8;
 }
 
@@ -1141,9 +1141,6 @@ button:disabled {
   background-image: url("../images/logo-white.png");
 }
 
-.day-mode .nav-brand-img {
-  background-image: url("../images/logo-black.png");
-}
 
 .navbar {
   height: 45px;
@@ -2194,4 +2191,175 @@ a:active {
   #news-container {
     margin-bottom: 50px;
   }
+}
+
+/* light-mode css rules */
+
+.light-mode body {
+  background-color: #ECEFF2;
+}
+
+.light-mode .bg-dark {
+  background-color: #ffffff !important;
+}
+
+.light-mode .navbar-item-text {
+  color: #3893E9 !important;
+}
+
+.light-mode .active-link {
+  background-color: #ECEFF2 !important;
+}
+
+.light-mode .card-background {
+  background-color: #ffffff !important;
+}
+
+.light-mode #content {
+  color: rgb(0, 0, 0);
+}
+
+.light-mode .title-articles {
+  color: rgb(94, 94, 94) !important;
+}
+
+.light-mode .view-all-button:hover>span {
+  color: #387fe1 !important;
+}
+
+.light-mode .main-hr {
+  border-color: #e0e0e0 !important;
+}
+
+.light-mode .container-title {
+  color: #8f8f8f !important;
+}
+
+.light-mode #category {
+  color: #387fe1 !important;
+}
+
+.light-mode .nav-brand-img {
+  background-image: url("../images/logo-black.png");
+}
+
+.light-mode #modal-button {
+  color: #00040a;
+}
+
+
+.light-mode .navbar-mobile-dropdown {
+  background: #ffffff !important;
+}
+
+.light-mode footer {
+  background-color: #ffffff;
+  border-top: 1px solid #818183;
+  font-size: 13px;
+  width: 100%;
+}
+
+.light-mode h5 {
+  color: rgb(80, 80, 80);
+}
+
+.light-mode h1 {
+  color: rgb(37, 37, 37) !important;
+}
+
+.light-mode #editor>h1 {
+  color: rgb(78, 78, 78) !important;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0px;
+}
+
+.light-mode #editor>h2 {
+  color: rgb(102, 102, 102);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-top: 0px;
+}
+
+.light-mode #editor>h3 {
+  color: rgb(116, 116, 116);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+.light-mode #editor>p>a {
+  color: #ffb300 !important;
+  border: none;
+}
+
+.light-mode #editor>p>em {
+  color: #383838;
+}
+
+.light-mode #editor>p>a:hover {
+  border-bottom: 1px #387fe1 solid;
+  -webkit-transition: border 1s linear;
+  -ms-transition: border 1s linear;
+  transition: border 1s linear;
+}
+
+.light-mode #editor>p {
+  color: #000000;
+}
+
+.light-mode #editor>ul {
+  color: #000000;
+}
+
+.light-mode #editor>span {
+  color: #000000;
+}
+
+.light-mode .category-tabs {
+  color: #387fe1;
+}
+
+.project-card-title {
+  color: #ffffff;
+}
+
+.light-mode .project-card-title {
+  color: #202020;
+}
+
+.light-mode .project-card-info {
+  color: #387fe1;
+}
+
+.more-articles-background {
+  background-color: #272A37;
+}
+
+.light-mode .more-articles-background {
+  background-color: rgb(221, 221, 221);
+}
+
+.light-mode .project-details-titles {
+  color: rgb(95, 95, 95);
+}
+
+.light-mode .muted-white-text {
+  color: rgb(128, 128, 128);
+}
+
+.light-mode .community-icons {
+  color: rgb(128, 128, 128);
+}
+
+.light-mode .uk-button-primary {
+  background-color: #ffffff;
+}
+
+.light-mode .article-actions-padding {
+  color: #387fe1;
+}
+
+.light-mode .coinmarketcap-currency-widget>div>div>div>span {
+  color: #387fe1 !important;
 }

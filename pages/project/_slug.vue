@@ -14,14 +14,14 @@
                     style="width: 40%; pointer-events: none; max-height:200px; max-width:200px;"
                   />
 
-                  <div class="uk-text-lead" style="color: white;">{{ projectintroduction.title }}</div>
+                  <div class="uk-text-lead project-card-title">{{ projectintroduction.title }}</div>
                   <div class="uk-text-meta">({{ projectintroduction.ticker }})</div>
                 </div>
                 <div
-                  class="uk-text-center pt-3 uk-width-1-2 uk-width-1-1@m"
+                  class="uk-text-center pt-3 uk-width-1-2 uk-width-1-1@m project-card-info"
                   style="font-size:0.95rem"
                 >
-                  <div>
+                  <div v-if="projectintroduction.website">
                     <fa :icon="['fas', 'globe']" />
                     <a
                       class="uk-button-text mx-0"
@@ -30,7 +30,7 @@
                       target="_"
                     >Website</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.explorer">
                     <fa :icon="['fas', 'database']" />
                     <a
                       class="uk-button-text mx-0"
@@ -39,7 +39,7 @@
                       target="_"
                     >Explorer</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.github">
                     <fa :icon="['fab', 'github']" />
                     <a
                       class="uk-button-text mx-0"
@@ -48,7 +48,7 @@
                       target="_"
                     >Source Code</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.whitepaper">
                     <fa :icon="['fas', 'book-open']" />
                     <a
                       class="uk-button-text mx-0"
@@ -66,7 +66,7 @@
                       target="_"
                     >Roadmap</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.team_members">
                     <fa :icon="['fas', 'user-tie']" />
                     <a
                       class="uk-button-text mx-0"
@@ -75,9 +75,15 @@
                       target="_"
                     >Team Members</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.coinmarketcap">
                     <img
+                      v-if="$colorMode.preference === 'dark'"
                       src="~/assets/images/cmc.png"
+                      style="height:19px; color:white; pointer-events: none;"
+                    />
+                    <img
+                      v-if="$colorMode.preference === 'light'"
+                      src="~/assets/images/cmc-light.png"
                       style="height:19px; color:white; pointer-events: none;"
                     />
                     <a
@@ -87,9 +93,15 @@
                       target="_"
                     >Coinmarketcap</a>
                   </div>
-                  <div>
+                  <div v-if="projectintroduction.coingecko">
                     <img
+                      v-if="$colorMode.preference === 'dark'"
                       src="~/assets/images/coingecko.png"
+                      style="height:19px; pointer-events: none;"
+                    />
+                    <img
+                      v-if="$colorMode.preference === 'light'"
+                      src="~/assets/images/coingecko-light.png"
                       style="height:19px; pointer-events: none;"
                     />
                     <a
@@ -110,7 +122,7 @@
           <div class="uk-card card-background uk-box-shadow-small">
             <div class="uk-padding-small" style="font-size:0.95rem">
               <div>
-                <span class="uk-text-bold mr-1">Genesis Date:</span>
+                <span class="uk-text-bold mr-1 project-details-titles">Genesis Date:</span>
                 <span class="muted-white-text">
                   {{
                   $moment(projectintroduction.genesis).format(
@@ -119,20 +131,20 @@
                   }}
                 </span>
               </div>
-              <div>
-                <span class="uk-text-bold mr-1">Consensus Type:</span>
+              <div v-if="projectintroduction.consensus_type">
+                <span class="uk-text-bold mr-1 project-details-titles">Consensus Type:</span>
                 <span class="muted-white-text">{{ projectintroduction.consensus_type }}</span>
               </div>
-              <div>
-                <span class="uk-text-bold mr-1">Algorithm:</span>
+              <div v-if="projectintroduction.algorithm">
+                <span class="uk-text-bold mr-1 project-details-titles">Algorithm:</span>
                 <span class="muted-white-text">{{ projectintroduction.algorithm }}</span>
               </div>
-              <div>
-                <span class="uk-text-bold mr-1">Block Time:</span>
+              <div v-if="projectintroduction.block_time">
+                <span class="uk-text-bold mr-1 project-details-titles">Block Time:</span>
                 <span class="muted-white-text">{{ projectintroduction.block_time }}</span>
               </div>
               <div v-if="projectintroduction.max_supply">
-                <span class="uk-text-bold mr-1">Max Supply:</span>
+                <span class="uk-text-bold mr-1 project-details-titles">Max Supply:</span>
                 <span class="muted-white-text">
                   {{ projectintroduction.max_supply }}
                   {{ projectintroduction.ticker }}
@@ -147,7 +159,7 @@
           <div class="uk-card card-background uk-box-shadow-small">
             <div class="py-2 px-1">
               <div class="uk-clearfix">
-                <div class="uk-text-center">
+                <div class="uk-text-center community-icons">
                   <a
                     class="uk-button uk-button-default uk-button-text"
                     id="link-hover"
@@ -345,7 +357,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div class="uk-padding-small article-actions-padding">
                     <span>
                       <fa :icon="['fab', 'twitter']" />
                     </span>
@@ -365,7 +377,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div class="uk-padding-small article-actions-padding">
                     <span>
                       <fa :icon="['fab', 'facebook']" />
                     </span>
@@ -385,7 +397,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div class="uk-padding-small article-actions-padding">
                     <span>
                       <fa :icon="['fab', 'linkedin']" />
                     </span>
@@ -407,7 +419,7 @@
                   class="uk-card card-background uk-box-shadow-small article-actions"
                   id="link-hover"
                 >
-                  <div class="uk-padding-small article-actions-padding category-hover">
+                  <div class="uk-padding-small article-actions-padding">
                     <span>
                       <fa :icon="['fab', 'telegram']" />
                     </span>
@@ -419,11 +431,8 @@
         </div>
       </div>
     </div>
-    <div style="background-color:#272A37;" class="uk-margin-top pb-3">
-      <div class="uk-container">
-        <MoreArticles></MoreArticles>
-      </div>
-    </div>
+
+    <MoreArticles></MoreArticles>
   </div>
 </template>
 

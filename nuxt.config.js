@@ -51,6 +51,7 @@ export default {
   buildModules: [
     '@nuxtjs/gtm',
     '@nuxtjs/moment',
+    '@nuxtjs/color-mode',
     ['@nuxtjs/fontawesome', {
       component: 'fa',
       icons: {
@@ -93,6 +94,11 @@ export default {
   /*
   ** Build configuration
   */
+
+ colorMode: {
+  preference: 'dark', // default value of $colorMode.preference
+  fallback: 'dark', // fallback value if not system preference found
+},
 
   generate: {
     routes: function() {

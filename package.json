@@ -22,6 +22,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@nuxtjs/color-mode": "^1.0.0",
     "@nuxtjs/fontawesome": "^1.1.1",
     "@nuxtjs/moment": "^1.6.0"
   }
