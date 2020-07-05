@@ -14,14 +14,6 @@
               id="link-hover"
             >News</a>
           </div>
-          <div class="uk-width-1-1 pb-2">
-            <a
-              href="https://mtr.mkm.ee/juriidiline_isik/268371?backurl=%2Fjuriidiline_isik"
-              target="_blank"
-              class="uk-text-muted"
-              id="link-hover"
-            >Licenses</a>
-          </div>
         </div>
         <!-- Grid column -->
 
