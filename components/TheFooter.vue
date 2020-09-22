@@ -152,22 +152,7 @@
 
       <hr class="footer-hr" />
 
-      <div class="uk-text-center uk-text-muted mx-2 mt-3 pb-4">
-        <span class="text-blue">Tx</span>
-        <span class="text-warning">bit</span> Exchange B.V.
-        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" />Poortland 66
-        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" />1046 BD
-        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" />Amsterdam
-        <fa :icon="['fas', 'circle']" class="fa-xs align-middle" />The
-        Netherlands
-        <br />
-        <br />
-        <small class="text-muted">
-          © 2020
-          <a href="https://www.txbit.io" target="_blank">Txbit Exchange B.V.</a>
-          All rights reserved.
-        </small>
-      </div>
+      
       <!-- Grid row-->
     </div>
     <!-- Footer Links -->
